@@ -17,7 +17,6 @@ uploaded_data/
 
 api/vendor/
 api/node_modules/
-api/tests/
 api/storage/
 api/database/
 api/.env
