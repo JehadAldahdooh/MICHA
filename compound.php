@@ -1327,7 +1327,7 @@
             <li><a href="about/index" >About</a></li>
             <li><a href="glossary/index">Glossary</a></li>
 			<li><a href="protocols/index">Protocols</a></li>
-            <li><a href="api">API</a></li>
+            <li><a href="micha_api">API</a></li>
 						<li><a href="/covid19" >Covid-19</a></li>
 
             <!--<li><a href="#">Contact</a></li>-->
@@ -2122,7 +2122,7 @@
 																		<!--<th width="200px">Analysis normalization</th>					
 																		<th width="188px">Analysis formulas</th>-->					
 																		<th width="188px">Analysis reference</th>
-																		<th width="188px">Analysis result</th>
+																		<th width="188px">Analysis metric</th>
 																		<!--<th width="200px">Analysis pipeline name</th>	
 																		<th width="220px">Analysis pipeline address</th>-->	
 																		<th width="188px">Min concentration</th>	

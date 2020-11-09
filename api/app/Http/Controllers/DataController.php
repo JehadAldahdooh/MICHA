@@ -40,6 +40,8 @@ class DataController extends Controller{
 	
 	public function get_targets($userStr){
 		
+		$dbconn = pg_connect("host=localhost dbname=micha user=root password=jehad2019pass#")
+					or die('Could not connect: ' . pg_last_error());
 
 		$query1=" select standard_inchi_key , primary_target_ids, primary_target_names,other_potent_target_ids, max_phase,  mw_freebase, alogp, hba, hbd, psa,
 					rtb, num_ro5_violations, acd_most_apka, acd_most_bpka, acd_logp, acd_logd, full_mwt,
@@ -98,8 +100,6 @@ class DataController extends Controller{
 	}
 	
 
-
-
     /**
      * Find drug screening annotations by inchikey.
      *
@@ -108,6 +108,7 @@ class DataController extends Controller{
 
     public function get_annotations($userStr)
     {
+		$dbconn = pg_connect("host=localhost dbname=micha user=root password=jehad2019pass#") or die('Could not connect: ' . pg_last_error());
         
 		$query1="
 			select distinct cell_line , cell_line_provenance ,  patient_age , patient_sex , patient_diagnosis , patient_sample , patient_sample_date ,

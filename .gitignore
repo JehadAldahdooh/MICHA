@@ -13,7 +13,8 @@ config/
 uploaded_data/
 
 
-
+compounds_mod.php
+index_mod.html
 
 api/vendor/
 api/node_modules/

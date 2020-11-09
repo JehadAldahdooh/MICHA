@@ -21,8 +21,8 @@ if ($type == "cell")
 				cell_line , cell_line_provenance ,  patient_age , patient_sex , patient_diagnosis ,
 				patient_sample , patient_sample_date,patient_evaluation_date from micha_protocols p  where protocol_name='Covid19' 
 				and study_title='$p_name'
-				and (cell_line LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
-				or cell_line_provenance LIKE '%" . strtoupper($requestData['search']['value']) . "%'
+				and (cell_line LIKE '%" . ($requestData['search']['value']) . "%' 
+				or cell_line_provenance LIKE '%" . ($requestData['search']['value']) . "%'
 				or patient_age LIKE '%" . strtoupper($requestData['search']['value']) . "%'
 				or patient_sex LIKE '%" . strtoupper($requestData['search']['value']) . "%'
 				or patient_diagnosis LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
@@ -35,8 +35,8 @@ if ($type == "cell")
 				cell_line , cell_line_provenance ,  patient_age , patient_sex , patient_diagnosis ,
 				patient_sample , patient_sample_date,patient_evaluation_date from micha_protocols p  where protocol_name='Covid19' 
 				and study_title='$p_name'
-			    and (cell_line LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
-			    or cell_line_provenance LIKE '%" . strtoupper($requestData['search']['value']) . "%'
+			    and (cell_line LIKE '%" . ($requestData['search']['value']) . "%' 
+			    or cell_line_provenance LIKE '%" . ($requestData['search']['value']) . "%'
 			    or patient_age LIKE '%" . strtoupper($requestData['search']['value']) . "%'
 			    or patient_sex LIKE '%" . strtoupper($requestData['search']['value']) . "%'
 			    or patient_diagnosis LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
@@ -111,15 +111,15 @@ else if ($type == "expr")
 			dilution_fold , vehicle , experimental_medium , plate_type , 
 			assay_format , assay_test_type , detection_tech  , cell_density , method_dispensation , 
 			volume_per_well , treatment_time from micha_protocols p  where protocol_name='Covid19' and study_title='$p_name'
-													  and (dilution_fold LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
-			  or vehicle LIKE '%" . strtoupper($requestData['search']['value']) . "%'
-			  or experimental_medium LIKE '%" . strtoupper($requestData['search']['value']) . "%'
-			  or plate_type LIKE '%" . strtoupper($requestData['search']['value']) . "%'
-			  or assay_format LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
-			  or assay_test_type LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
-			  or detection_tech LIKE '%" . strtoupper($requestData['search']['value']) . "%'
-			  or cell_density LIKE '%" . strtoupper($requestData['search']['value']) . "%'
-			  or method_dispensation LIKE '%" . strtoupper($requestData['search']['value']) . "%'
+													  and (dilution_fold LIKE '%" . ($requestData['search']['value']) . "%' 
+			  or vehicle LIKE '%" . ($requestData['search']['value']) . "%'
+			  or experimental_medium LIKE '%" . ($requestData['search']['value']) . "%'
+			  or plate_type LIKE '%" . ($requestData['search']['value']) . "%'
+			  or assay_format LIKE '%" . ($requestData['search']['value']) . "%' 
+			  or assay_test_type LIKE '%" . ($requestData['search']['value']) . "%' 
+			  or detection_tech LIKE '%" . ($requestData['search']['value']) . "%'
+			  or cell_density LIKE '%" . ($requestData['search']['value']) . "%'
+			  or method_dispensation LIKE '%" . ($requestData['search']['value']) . "%'
 			  or treatment_time LIKE '%" . strtoupper($requestData['search']['value']) . "%'
 			  or volume_per_well LIKE '%" . strtoupper($requestData['search']['value']) . "%')  
 			   OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
@@ -128,15 +128,15 @@ else if ($type == "expr")
 			dilution_fold , vehicle , experimental_medium , plate_type , 
 			assay_format , assay_test_type , detection_tech  , cell_density , method_dispensation , 
 			volume_per_well , treatment_time from micha_protocols p  where protocol_name='Covid19' and study_title='$p_name'
-													  and (dilution_fold LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
-			  or vehicle LIKE '%" . strtoupper($requestData['search']['value']) . "%'
-			  or experimental_medium LIKE '%" . strtoupper($requestData['search']['value']) . "%'
-			  or plate_type LIKE '%" . strtoupper($requestData['search']['value']) . "%'
-			  or assay_format LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
-			  or assay_test_type LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
-			  or detection_tech LIKE '%" . strtoupper($requestData['search']['value']) . "%'
-			  or cell_density LIKE '%" . strtoupper($requestData['search']['value']) . "%'
-			  or method_dispensation LIKE '%" . strtoupper($requestData['search']['value']) . "%'
+													  and (dilution_fold LIKE '%" . ($requestData['search']['value']) . "%' 
+			  or vehicle LIKE '%" . ($requestData['search']['value']) . "%'
+			  or experimental_medium LIKE '%" . ($requestData['search']['value']) . "%'
+			  or plate_type LIKE '%" . ($requestData['search']['value']) . "%'
+			  or assay_format LIKE '%" . ($requestData['search']['value']) . "%' 
+			  or assay_test_type LIKE '%" . ($requestData['search']['value']) . "%' 
+			  or detection_tech LIKE '%" . ($requestData['search']['value']) . "%'
+			  or cell_density LIKE '%" . ($requestData['search']['value']) . "%'
+			  or method_dispensation LIKE '%" . ($requestData['search']['value']) . "%'
 			  or treatment_time LIKE '%" . strtoupper($requestData['search']['value']) . "%'
 			  or volume_per_well LIKE '%" . strtoupper($requestData['search']['value']) . "%')  
 			    ";
@@ -163,15 +163,20 @@ else
     if ($requestData['search']['value'])
     {
 
+
+
+//print_r("nnnn");
         $query2 = "select distinct 
 			compound_name , standard_inchi_key from micha_protocols p  where protocol_name='Covid19' and study_title='$p_name'
-				and (compound_name LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
+				and (compound_name LIKE '%" . $requestData['search']['value'] . "%' 
 			  or standard_inchi_key LIKE '%" . strtoupper($requestData['search']['value']) . "%') 
 			   OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
 
+//print_r( $query2);
+
         $query3 = "select distinct 
 			compound_name , standard_inchi_key from micha_protocols p  where protocol_name='Covid19' and study_title='$p_name'
-				and (compound_name LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
+				and (compound_name LIKE '%" .$requestData['search']['value'] . "%' 
 			  or standard_inchi_key LIKE '%" . strtoupper($requestData['search']['value']) . "%') 
 			    ";
 

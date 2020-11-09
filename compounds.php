@@ -1896,7 +1896,7 @@ $("#suggesstion-box_max_concentration").hide();
             <li><a href="about/index" >About</a></li>
             <li><a href="glossary/index">Glossary</a></li>
 			<li><a href="protocols/index">Protocols</a></li>
-            <li><a href="api">API</a></li>
+            <li><a href="micha_api">API</a></li>
 						<li><a href="/covid19" >Covid-19</a></li>
 
             <!--<li><a href="#">Contact</a></li>-->
@@ -2643,7 +2643,7 @@ $("#suggesstion-box_max_concentration").hide();
 																		<!--<th width="200px">Analysis normalization</th>					
 																		<th width="188px">Analysis formulas</th>-->					
 																		<th width="188px">Analysis reference</th>
-																		<th width="188px">Analysis result</th>
+																		<th width="188px">Analysis metric</th>
 																		<!--<th width="200px">Analysis pipeline name</th>	
 																		<th width="220px">Analysis pipeline address</th>-->	
 																		<th width="188px">Min concentration</th>	
@@ -2946,64 +2946,8 @@ top: 5px; ">
     </div>
     <div id="templatemo_content_bottom"></div>
    
-        <div id="templatemo_footer">
-            <div class="section_w240" style="margin-left: 0px;padding-right: 0px;width:240px;">
-                <h3></h3>
-                <div class="sub_content">
-                    <ul class="footer_list " style="width:400px;">
-                        <li>
-                            Copyright © 2020 <a style="color:blue;" target="_blank"  href="https://www.helsinki.fi/en/researchgroups/network-pharmacology-for-precision-medicine">Netphar</a>
-                            <!-- Credit: www.templatemo.com -->
-                        </li>
-                        <li>Email: jing.tang@helsinki.fi</li>
-                    </ul>
-					<ul class="footer_list " style="width:400px;">
-                        <li>
-                        </li>
-                        <li>
-                        </li>
-                        <li>
-						License: 
-                        </li>
-                        <li><a style="color:blue;" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a></li>
-                        <li><a style="color:blue;" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">International License</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section_w240" style="width:340px;margin-left:120px;">
-                <h3>Partners</h3>
-                <div class="sub_content">
-                    <ul class="footer_list numbering">
-                        <li><a target="_blank" href="https://www.fimm.fi/">Institue For Molecular Medicine, University of Helsinki (FIMM-UH)</a></li>
-                        <li><a target="_blank" href="https://www.imtm.cz/">Institute of Molecular and Translational Medicine (IMTM)</a></li>
-                        <li><a target="_blank" href="https://www.marionegri.it/">Mario Negri Institute for Pharmacological Research (MN)</a></li>
-                        <li><a target="_blank" href="https://eatris.eu/">European Infrastructure for Translational Medicine (EATRIS)</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section_w240" style="margin-left: 30px;padding-right: 0px;"> <!--style="width:150px;"-->
-                <h3>Tools by our lab</h3>
-                <div class="sub_content">
-                    <ul class="footer_list ">
-                        <li><a target="_blank" href="https://drugcomb.fimm.fi/" style="color:blue;">DrugComb</a></li>
-                        <li><a target="_blank" href="http://drugtargetcommons.fimm.fi/" style="color:blue;">DrugTargetCommons</a></li>
-                        <li><a target="_blank" href="http://drugtargetprofiler.fimm.fi/" style="color:blue;">Drug Target Profiler</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--  <div class="section_w240">
-           <h3>About Light Space</h3>
-            <div class="sub_content">
-                <p>Nullam ultrices tempor nisi, ac egestas diam aliquam a. Ut eleifend <a href="#">semper</a> turpis, id feugiat arcu dignissim eu. Donec <a href="#">mattis</a> adipiscing imperdiet.</p>
-          </div>
-        </div>
-        <div class="section_w240">
-           <!-- <h3>Testimonials</h3>
-            <div class="sub_content">
-                <p>" Aliquam vehicula accumsan arcu, vestibulum cursus purus lobortis eu. Pellentesque vitae neque non lorem vehicula adipiscing."</p>
-                <a href="#"> - Templatemo </a>
-            </div>-->
-        </div>
+<?php include 'theme_files/footer.php' ;?>
+
 
 <div class="cleaner_h40"></div>
 

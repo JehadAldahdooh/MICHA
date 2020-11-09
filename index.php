@@ -200,7 +200,7 @@ a:hover{
     width: 100%;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     border-radius: 2px;
-    margin-bottom: 15px;
+    //margin-bottom: 15px;
 }
 
 .info-box-icon {
@@ -432,108 +432,11 @@ a:hover{
 </head>
 <body>
 <div id="templatemo_wrapper">	
-    <div id="templatemo_site_title_bar">
-  
-        <div id="site_title">
-            <h1><a href="#">
-MICHA 
-<div class="cleaner_h40"></div>
-                <!-- <span>free css templates</span> -->
-            </a></h1>
-			
-			
-					
-        </div>
-		
-		
-		
-		
-		
-		
-	
-
-
-
-
-
-
-	
-
-
-
-
-
-
-<!--
-<div class="" style="width: 140px;display:inline-block;">
-                <div class="info-box bg-aqua">
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">Potent targets</span>
-                        <span class="info-box-number">400,000</span>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 70%"></div>
-                        </div>
-                        <span class="progress-description">
-            chemicals
-          </span>
-                    </div>
-                </div>
-            </div>
-            <div class="" style="width: 170px;display:inline-block;">
-                <div class="info-box bg-green">
-                    
-                    <div class="info-box-content">
-                        <span class="info-box-text">disease indications</span>
-                        <span class="info-box-number">3600 </span>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 70%"></div>
-                        </div>
-                        <span class="progress-description">
-            chemicals
-          </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="" style="display:inline-block;width:224px;">
-                <div class="info-box bg-yellow">
-                    <div class="info-box-content">
-                        <span class="info-box-text">drug screening protocols</span>
-                        <span class="info-box-number"> 6</span>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 30%"></div>
-                        </div>
-                        <span class="progress-description">3 Covid19 studies</span>
-                    </div>
-                </div>
-            </div> -->
-
-            
-        <ul class="social_network">
-            <!--<li><a href="http://www.facebook.com/templatemo" target="_parent"><img src="images/facebook_icon.png" alt="facebook" /></a></li>
-            <li><a href="http://www.facebook.com/templatemo" target="_parent"><img src="images/linkin_icon.png" alt="linkin" /></a></li>-->
-            <li><a href="https://twitter.com/NetPharMed" target="_blank"><img src="images/twitter_icon.png" alt="twitter" /></a></li>
-        </ul>
-            
-    </div> <!-- end of templatemo_site_title_bar -->
     
-    <div id="templatemo_menu">
-    
-	
-	
-        <ul style="padding:0px;padding-left:15px;">
-            <li><a href="#" class="current" >Home</a></li>
-            <li><a href="about/index" >About</a></li>
-            <li><a href="glossary/index">Glossary</a></li>
-			<li><a href="protocols/index">Protocols</a></li>
-            <li><a href="api">API</a></li>
-			<li><a href="/covid19" >Covid-19</a></li>
 
-            <!--<li><a href="#">Contact</a></li>-->
-        </ul>    	
-    
-    </div> <!-- end of templatemo_menu -->
+
+
+<?php include 'theme_files/header.php' ;?>
     
     <div id="templatemo_search">
     
@@ -554,9 +457,14 @@ MICHA
 
 	    <div id="banner_left">
         
-            <p style="">MICHA (Minimal Information for CHemosensitivity Assay) is a protocol for the annotation and reporting of 
-			Chemosensensitivity assays by FAIRifying drug sensitivity screening data.<span> </span> </p>
+           <!-- <p style="">MICHA (Minimal Information for CHemosensitivity Assay) is a protocol for the annotation and reporting of 
+			Chemosensensitivity assays by FAIRifying drug sensitivity screening data.<span> </span> </p> -->
 			
+			
+			<p style="">MICHA (Minimal Information for CHemosensitivity Assay) is a web-based platform to facilitate the annotation of 
+			major components of common chemosensensitivity (drug sensitivity) assays, including 1) compounds, 2) samples, 
+			3) reagents, and 4) data processing references. <span> </span>
+			</p>
 			
            <!-- <div class="cleaner_h20"></div>-->
            <!--<div class="button_01"><a href="about/" class='noHover'>More</a></div>-->
@@ -567,48 +475,54 @@ MICHA
 			
 			
 			
-<div class="" style="width: 170px;display:inline-block;">
-                <div class="info-box bg-aqua">
+<div class="" style="width: 230px;display:inline-block;">
+                <div class="info-box bg-aqua" style="min-height:30px;">
                     <!--<span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>-->
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Potent targets</span>
-                        <span class="info-box-number">800,000</span>
-                        <div class="progress">
+                        <!--<span class="info-box-text">Potent targets</span>-->
+                        <span class="info-box-number"  style="font-size:20px;font-style:bold;">>800k</span>
+                       <!-- <div class="progress">
                             <div class="progress-bar" style="width: 70%"></div>
-                        </div>
-                        <span class="progress-description">
-            chemicals
+                        </div> -->
+                        <span style="color:green;  font-weight: bold;
+" >
+            Compounds with validated targets
           </span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
             </div>
-            <div class="" style="width: 226px;display:inline-block;">
-                <div class="info-box bg-green">
+            <div class="" style="width: 238px;display:inline-block;">
+                <div class="info-box bg-green" style="min-height:30px;">
                     <!--<span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>-->
                     <div class="info-box-content">
-                        <span class="info-box-text">disease indications</span>
-                        <span class="info-box-number">3600 </span>
-                        <div class="progress">
+                       <!-- <span class="info-box-text">disease indications</span>-->
+                        <span class="info-box-number" style="font-size:20px;font-style:bold;">3600 </span>
+                        <!-- <div class="progress">
                             <div class="progress-bar" style="width: 70%"></div>
                         </div>
-                        <span class="progress-description">
-            chemicals
+                        <span class="progress-description">-->
+						<span style="color:green;  font-weight: bold;" >
+            Compounds with disease indications
           </span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
             </div><!-- /.col -->
 
-            <div class="" style="display:inline-block;width:260px;">
-                <div class="info-box bg-yellow">
+            <div class="" style="display:inline-block;width:196px;">
+                <div class="info-box bg-yellow" style="min-height:30px;">
                     <!--<span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>-->
                     <div class="info-box-content">
-                        <span class="info-box-text">drug screening protocols</span>
-                        <span class="info-box-number"> 12 </span>
-                        <div class="progress">
+                        <!--<span class="info-box-text">drug screening protocols</span>-->
+						                        <!--<span class="info-box-text">drug screening protocols</span>-->
+
+                        <span class="info-box-number" style="font-size:20px;font-style:bold;"> 11 </span>
+                        <!-- <div class="progress">
                             <div class="progress-bar" style="width: 30%"></div>
-                        </div>
-                        <span class="progress-description">6 Covid19 studies</span>
+                        </div>-->
+						
+					<span  style="color:green;  font-weight: bold;">Drug screening protocols </span>
+                        <!--<span class="progress-description">6 Covid19 studies</span>-->
                     </div>
                 </div>
             </div> 
@@ -691,6 +605,13 @@ MICHA
                     <input type="file" name="file" id="file" class="form-control" style="width: 96%;    height: 30%;" />
                     <br>
                    <button id="submit" name="submit" class="btn btn-primary upload-image">Upload File</button>
+				    
+					
+					
+					<a href="template" style="background:#6495ED;color:white;" href="template" class="btn btn-primary upload-image">Upload Template</a>
+
+                   <a   href="comp_inchi.xlsx" style="background:#6495ED;color:white;" class="btn btn-primary upload-image">Download Template</a>
+
                 </form>
 
 
@@ -751,10 +672,11 @@ MICHA
                   <img src="images/folder.png" alt="product 1" />
                 </div>
                 <p   style="text-align: justify;">
-				 Users can upload compound names and standard inchiKey using excel file. 
-				After clicking on upload button, MICHA will extract all publicly available information 
-				for the compounds such as primary targets, other potent targets, clinical information
-				and physiochemical information.
+				 Users can upload compound names and standard InChiKeys using excel file. After clicking on upload button, 
+				 MICHA will extract publicly available information for the compounds including primary targets, 
+				 other potent targets, disease indications and physiochemical properties. 
+
+
 				</p>
                 
               <!--<div class="cleaner_h10"></div>
@@ -769,11 +691,12 @@ MICHA
                   <img src="images/paint.png" alt="product 1" />
                 </div>
                 <p style="text-align: justify;">
-				After viewing the information returned by MICHA, users need to click on ‘Next’ button to go to annotations page.
-				On annotations page, users will need to fill-in experimental annotations for their compounds e.g. Tested cell-lines 
-				or patient samples, plates, mediums, assay formats, detection technologies, concentration ranges etc. 
-				Users will be able to see existing annotations for MICHA fairified protocols 
-				(if matching with user’s uploaded compounds).</p>
+				After viewing the information returned by MICHA, users need to click on ‘Next’ button to go for
+				the annotations of samples, reagents and data processing references. The definitions of assay 
+				ontology terms are explained in the ‘Glossary’ tab.
+
+
+</p>
                 
                     
             </div>
@@ -784,8 +707,9 @@ MICHA
                   <img src="images/safe.png" alt="product 1" />
                 </div>
                 <p style="text-align: justify;">
- Finally, an annotation report can be generated for the users. In addition, users may also browse the catalogue of drug sensitivity 
- screen protocols which were already FAIRified by MICHA.
+Finally, a tabular report can be generated to include all the annotation results for the users. 
+In addition, users may also browse the catalogue of drug sensitivity assay protocols which are already FAIRified by MICHA.
+
 
 				</p>
                 
@@ -801,65 +725,10 @@ MICHA
 	
 	
 	
-	
-        <div id="templatemo_footer">
-            <div class="section_w240" style="margin-left: 0px;padding-right: 0px;width:240px;">
-                <h3></h3>
-                <div class="sub_content">
-                    <ul class="footer_list " style="width:400px;">
-                        <li>
-                            Copyright © 2020 <a style="color:blue;" target="_blank"  href="https://www.helsinki.fi/en/researchgroups/network-pharmacology-for-precision-medicine">Netphar</a>
-                            <!-- Credit: www.templatemo.com -->
-                        </li>
-                        <li>Email: jing.tang@helsinki.fi</li>
-                    </ul>
-					<ul class="footer_list " style="width:400px;">
-                        <li>
-                        </li>
-                        <li>
-                        </li>
-                        <li>
-						License: 
-                        </li>
-                        <li><a style="color:blue;" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a></li>
-                        <li><a style="color:blue;" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">International License</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section_w240" style="width:340px;margin-left:120px;">
-                <h3>Partners</h3>
-                <div class="sub_content">
-                    <ul class="footer_list numbering">
-                        <li><a target="_blank" href="https://www.fimm.fi/">Institue For Molecular Medicine, University of Helsinki (FIMM-UH)</a></li>
-                        <li><a target="_blank" href="https://www.imtm.cz/">Institute of Molecular and Translational Medicine (IMTM)</a></li>
-                        <li><a target="_blank" href="https://www.marionegri.it/">Mario Negri Institute for Pharmacological Research (MN)</a></li>
-                        <li><a target="_blank" href="https://eatris.eu/">European Infrastructure for Translational Medicine (EATRIS)</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section_w240" style="margin-left: 30px;padding-right: 0px;"> <!--style="width:150px;"-->
-                <h3>Tools by our lab</h3>
-                <div class="sub_content">
-                    <ul class="footer_list ">
-                        <li><a target="_blank" href="https://drugcomb.fimm.fi/" style="color:blue;">DrugComb</a></li>
-                        <li><a target="_blank" href="http://drugtargetcommons.fimm.fi/" style="color:blue;">DrugTargetCommons</a></li>
-                        <li><a target="_blank" href="http://drugtargetprofiler.fimm.fi/" style="color:blue;">Drug Target Profiler</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--  <div class="section_w240">
-           <h3>About Light Space</h3>
-            <div class="sub_content">
-                <p>Nullam ultrices tempor nisi, ac egestas diam aliquam a. Ut eleifend <a href="#">semper</a> turpis, id feugiat arcu dignissim eu. Donec <a href="#">mattis</a> adipiscing imperdiet.</p>
-          </div>
-        </div>
-        <div class="section_w240">
-           <!-- <h3>Testimonials</h3>
-            <div class="sub_content">
-                <p>" Aliquam vehicula accumsan arcu, vestibulum cursus purus lobortis eu. Pellentesque vitae neque non lorem vehicula adipiscing."</p>
-                <a href="#"> - Templatemo </a>
-            </div>-->
-        </div>
+<?php
+
+include 'theme_files/footer.php'; ?>
+
 		
 		
 		

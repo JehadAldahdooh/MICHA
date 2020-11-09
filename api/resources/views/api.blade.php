@@ -181,7 +181,7 @@ font-style: italic;
   </head>
  <body>
     <h1>MICHA API</h1>
-    <div class="app-desc">More information: <a href="http://micha.fimm.fi/about/">http://micha.fimm.fi/about/</a></div>
+    <div class="app-desc">More information: <a href="https://micha-protocol.org/about/">https://micha-protocol.org/about/</a></div>
     <div class="app-desc">Contact Info: <a href="https://www.helsinki.fi/en/researchgroups/network-pharmacology-for-precision-medicine">
 	 NETWORK PHARMACOLOGY FOR PRECISION MEDICINE 
     </a></div>
@@ -200,7 +200,7 @@ font-style: italic;
 
     <div class="app-desc">
         <p>
-            MICHA is a protocol for the annotation and reporting of Chemosensitivity assays by FAIRifying drug sensitivity screening data. It can provide publicly available information for the compounds such as primary targets, other potent targets, clinical phase and physicochemical properties by inputting standard_inchiKey (either through MICHA website (http://micha.fimm.fi) or programmatically by using API (e.g. http://micha.fimm.fi/api/get_targets/XGALLCVXEZPNRQ-UHFFFAOYSA-N).
+            MICHA is a protocol for the annotation and reporting of Chemosensitivity assays by FAIRifying drug sensitivity screening data. It can provide publicly available information for the compounds such as primary targets, other potent targets, clinical phase and physicochemical properties by inputting standard_inchiKey (either through MICHA website (https://micha-protocol.org/micha_api) or programmatically by using API (e.g. https://micha-protocol.org/micha_api/get_targets/XGALLCVXEZPNRQ-UHFFFAOYSA-N).
         </p>
     </div>
 
