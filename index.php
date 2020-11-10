@@ -46,6 +46,18 @@ function clearText(field)
 
         <!-- jQuery code to show the working of this method -->
         $(document).ready(function() { 
+		
+				$("#step2").click(function(event) {
+		  alert("Please upload the file first");
+		
+		});
+		$("#step3").click(function(event) {
+		  alert("Please upload the file first");
+		
+		});
+
+
+
             $("#upload_id").click(function(event) { 
 			  event.preventDefault();
 $('#upload_id').click(false);
@@ -554,16 +566,29 @@ a:hover{
         <div id="banner_right">
         
         	<div class="banner_button" data-toggle="collapse" data-target="#templatemo_content">
-            	<a href="#style_upload" id="upload_id" class="button-hand">Upload</a>  <!-- here href by id of div-->
+            	<a href="#style_upload" id="upload_id" class="button-hand">Step 1</a>  <!-- here href by id of div-->
             </div>
             
-            <div class="banner_button">
+            <!--<div class="banner_button">
             	<a href="comp_inchi.xlsx">Download template</a>
             </div>
             
             <div class="banner_button">
             	<a href="template">Example data</a>
+            </div>-->
+			
+			
+			
+			<div class="banner_button">
+            	<a id="step2">Step 2</a>
             </div>
+            
+            <div class="banner_button">
+            	<a id="step3">Step 3</a>
+            </div>
+
+
+
         
         </div>
         
@@ -604,13 +629,19 @@ a:hover{
 
                     <input type="file" name="file" id="file" class="form-control" style="width: 96%;    height: 30%;" />
                     <br>
-                   <button id="submit" name="submit" class="btn btn-primary upload-image">Upload File</button>
+                   <button id="submit" name="submit" class="banner_button btn btn-primary upload-image">Upload File</button>
 				    
 					
 					
-					<a href="template" style="background:#6495ED;color:white;" href="template" class="btn btn-primary upload-image">Upload Template</a>
+					<a href="template" style=" color: #052b5a;
+    font-size: 18px;
+    background: url(images/temp_button.png);" href="template" class="banner_button btn btn-primary upload-image">Upload Template</a>
 
-                   <a   href="comp_inchi.xlsx" style="background:#6495ED;color:white;" class="btn btn-primary upload-image">Download Template</a>
+                   <a   href="comp_inchi.xlsx" style="
+    
+    color: #052b5a;
+    font-size: 18px;
+    background: url(images/temp_button.png);" class="btn btn-primary">Download Template</a>
 
                 </form>
 

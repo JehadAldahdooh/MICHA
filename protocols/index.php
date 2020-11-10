@@ -86,7 +86,61 @@
 		
 		
 		
+		        @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+		     
+        
+
+        .numbering {
+            max-width: 350px;
+            counter-reset: my-awesome-counter;
+            list-style: none;
+            padding-left: 40px;
+        }
+        
+        .numbering li {
+            margin: 0 0 0.5rem 0;
+            counter-increment: my-awesome-counter;
+            position: relative;
+        }
+        
+        .numbering li::before {
+            content: counter(my-awesome-counter);
+            color: #fcd000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            position: absolute;
+            --size: 32px;
+            left: calc(-1 * var(--size) - 10px);
+            line-height: var(--size);
+            width: var(--size);
+            height: var(--size);
+            top: 0;
+            transform: rotate(-10deg);
+            background: black;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 1px 1px 0 #999;
+        }
+
+        
+        .isnot {
+            line-height: 1.7em;
+            padding-top: 5px letter-spacing: 1px;
+           // font-family: Tahoma, Geneva, sans-serif;
+            font-size: 14px;
+            color: black;
+            text-align: justify;
+        }
 		
+		.p_ablout{
+            line-height: 1.7em; 
+			//padding-top:5px;
+			letter-spacing: 1px;
+			//font-family: Tahoma, Geneva, sans-serif;
+			//font-size: 14px;color: 
+			black;text-align: justify;		
+		}
+
 		
 		
 		

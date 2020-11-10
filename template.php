@@ -1,1354 +1,141 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>MICHA</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-    
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
-
-<link href="templatemo_style.css?version=3" rel="stylesheet" type="text/css" />
-<link href="jehad_css.css" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-
-<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">-->
-    <script lang="javascript" src="../new/js/xlsx.full.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.8/css/jquery.dataTables.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/dataTables.responsive.css">
-
-    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.js"></script>
-
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
-
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.0/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.flash.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.html5.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.print.min.js"></script>
-    <!-- Hero slider style (https://codyhouse.co/gem/hero-slider/) -->
-    <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
-    <link rel="stylesheet" href="css/tooplate-style.css">
-    <!--<script type="text/javascript" src="main.js?version=19"></script>-->
-
-    <!--this is for auto complete search list-->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="lib/js/jquery-ui.js"></script>
-    <!-- auto complete finish lib-->
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css">
-<!-------------------------------------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------------------------------------->
-
-<link rel="stylesheet" type="text/css" href="form.css" >
-
-<link rel="stylesheet" type="text/css" href="bootstrap.min.css" >
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-<script language="javascript" type="text/javascript">
-
-function clearText(field)
-{
-    if (field.defaultValue == field.value) field.value = '';
-    else if (field.value == '') field.value = field.defaultValue;
-}
-
-        <!-- jQuery code to show the working of this method -->
-    $(document).ready(function() { 
-
-
-	console.log("test ssssss");
-	
-	//$('#recordModal_expr').modal('hide');
-	
-	
-            $("#templatemo_content_top").click(function() { 
-                //$(this).fadeOut();
-				console.log("sdsdsdsss");
-				$('html,body').animate({scrollTop: $(".moveto").offset().top},'slow');
-				document.getElementById("style1").style.display = "none";
-				document.getElementById("style2").style.display = "none";
-				document.getElementById("style3").style.display = "none";
-				document.getElementById("style_upload").style.display = "block";                				
-        }); 
-			
-			
-			
-			
-			
-			
-		
-			
-			
-		$('#link').click(function(e) {
-			e.preventDefault();
-			console.log("sdsds");
-		    document.getElementById("dropme").style.display = "none";
-		    document.getElementById("expr_whole").style.display = "block";
-		    document.getElementById("cell_whole").style.display = "none";
-		    document.getElementById("an_whole").style.display = "none";
-		    document.getElementById("banner_right").style.display = "none";
-		    document.getElementById("annotate_banner").style.display = "block";
-			document.getElementById("banner_left_annotate").style.display = "block";
-			document.getElementById("banner_left").style.display = "none";
-
-		});
-		
-		
-		
-		$('#expr_form_banner').click(function(e) {
-			e.preventDefault();
-			console.log("sdsds");
-		    document.getElementById("dropme").style.display = "none";
-		    document.getElementById("expr_whole").style.display = "block";
-		    document.getElementById("cell_whole").style.display = "none";
-		    document.getElementById("an_whole").style.display = "none";
-		    document.getElementById("banner_right").style.display = "none";
-		    document.getElementById("annotate_banner").style.display = "block";
-			
-		});
-
-
-
-		$('#cell_form_banner').click(function(e) {
-			e.preventDefault();
-			console.log("sdsds");
-		    document.getElementById("dropme").style.display = "none";
-		    document.getElementById("expr_whole").style.display = "none";
-		    document.getElementById("cell_whole").style.display = "block";
-		    document.getElementById("an_whole").style.display = "none";
-		    document.getElementById("banner_right").style.display = "none";
-		    document.getElementById("annotate_banner").style.display = "block";
-			
-		});
-
-
-
-		$('#an_form_banner').click(function(e) {
-			e.preventDefault();
-			console.log("sdsds");
-		    document.getElementById("dropme").style.display = "none";
-		    document.getElementById("expr_whole").style.display = "none";
-		    document.getElementById("cell_whole").style.display = "none";
-		    document.getElementById("an_whole").style.display = "block";
-		    document.getElementById("banner_right").style.display = "none";
-		    document.getElementById("annotate_banner").style.display = "block";
-			
-		});
-
-		
-		
-		
-		
-	
-	
-	    // This is the first point entry for history  so that if user click on annotate button then url will be changed and another sate will 
-		// be pushed so if user click back he will come here to this defined first entry in history
-        /*window.history.pushState({
-            url: "/compounds",
-            title: "compounds"
-        }, "compounds", "/compounds");
-
-
-		$('#link').click(function(e) {
-			e.preventDefault();
-			console.log("sdsds");
-		    var $this = $(this),
-            url = $this.attr("href"),
-            title = $this.text();
-		   //window.history.pushState('obj', 'newtitle', '/shifted_t/annotate');
-            window.history.pushState({
-              url: "/annotate",
-            title: "annotate"
-            }, 'annotate', '/annotate');
-			
-		    document.getElementById("dropme").style.display = "none";
-		    document.getElementById("table_expr").style.display = "block";
-		});
-
-
-		$(window).on('popstate', function (e) {
-			var state = e.originalEvent.state;
-			console.log(state);
-			if (state !== null) {
-				document.title = state.title;
-				console.log(state.title);
-				if (state.title == "compounds"){
-					document.getElementById("dropme").style.display = "block";
-					document.getElementById("table_expr").style.display = "none";
-				}else{
-					document.getElementById("dropme").style.display = "none";
-					document.getElementById("table_expr").style.display = "block";
-				}
-			} 
-		});*/
-
-	}); 
-</script>
-
-
-
-<!--------------------------------Compounds-------------------------------->
-<!------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------------------------------------->
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126984000-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-126984000-3');
-    </script>
-
-    
-
-
-
-
-
-<style>
-/*
-.btn-success {
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
-}
-.btn-danger {
-    color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
-.btn {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-</style>
-
-
-
-</head>
-<body>
-<div id="templatemo_wrapper">	
-
-<?php include 'theme_files/header.php' ;?>
-
-    
-    <div id="templatemo_search">
-    
-    	<div id="search_box">
-<!--	<script async src="https://cse.google.com/cse.js?cx=017046730853086508825:sckkkfpde90"></script>
-<div class="gcse-search"></div>-->
-
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>MICHA</title>
+      <meta name="keywords" content="" />
+      <meta name="description" content="" />
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <link href="templatemo_style.css?version=3" rel="stylesheet" type="text/css" />
+      <link href="jehad_css.css" rel="stylesheet" type="text/css" />
+      <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">-->
+      <script lang="javascript" src="../new/js/xlsx.full.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.8/css/jquery.dataTables.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/dataTables.responsive.css">
+      <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.0/js/dataTables.buttons.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.flash.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.html5.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.print.min.js"></script>
+      <!-- Hero slider style (https://codyhouse.co/gem/hero-slider/) -->
+      <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
+      <link rel="stylesheet" href="css/tooplate-style.css">
+      <!--<script type="text/javascript" src="main.js?version=19"></script>-->
+      <!--this is for auto complete search list-->
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <script src="lib/js/jquery-ui.js"></script>
+      <!-- auto complete finish lib-->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css">
+      <link rel="stylesheet" type="text/css" href="form.css" >
+      <link rel="stylesheet" type="text/css" href="bootstrap.min.css" >
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <link rel="stylesheet" type="text/css" href="theme_files/css/main.css" >
+      <script src="js/autocomplete.js"></script>
+      <script src="js/steps_hide_show_doms.js"></script>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126984000-3"></script>    <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag() {
+             dataLayer.push(arguments);
+         }
+         gtag('js', new Date());
+         
+         gtag('config', 'UA-126984000-3');
+      </script>
+   </head>
+   <body>
+      <div id="templatemo_wrapper">
+      <?php include 'theme_files/header.php' ;?>
+      <div id="templatemo_search">
+         <div id="search_box">
+            <!--	<script async src="https://cse.google.com/cse.js?cx=017046730853086508825:sckkkfpde90"></script>
+               <div class="gcse-search"></div>-->
             <form action="compound.php" method="get">
-                <input type="text" value="Enter compound name..." name="c_name" size="10" id="searchfield" title="searchfield" 
-				onfocus="clearText(this)" onblur="clearText(this)" />
-                <input type="submit" name="" value="" alt="Search" id="searchbutton" title="Search" />
+               <input type="text" value="Enter compound name..." name="c_name" size="10" id="searchfield" title="searchfield" 
+                  onfocus="clearText(this)" onblur="clearText(this)" />
+               <input type="submit" name="" value="" alt="Search" id="searchbutton" title="Search" />
             </form>
-        </div>
-    
-    </div> <!-- end of search -->
-    
-    <div id="templatemo_banner">
-
-	    <div id="banner_left">
-        
+         </div>
+      </div>
+      <!-- end of search -->
+      <div id="templatemo_banner">
+         <div id="banner_left">
+            <p>MICHA extracted all publicly available information for the compounds such as primary targets, other potent targets, 
+               clinical information and physiochemical information.
+            </p>
+            <p>
+               Please continue to annotate your data by clicking on Step 2  or you can download the results by clicking Step 3.
+            </p>
+            <!-- <div class="cleaner_h20"></div>-->
+         </div>
+         <div id="banner_left_annotate" style="display:none;">
             <!--<p>MICHA (Minimal Information for CHemosensitivity Assay) is a protocol for the annotation and reporting of 
-			Chemosensensitivity assays by FAIRifying drug sensitivity screening data.<span> </span> </p>-->
-			
-			<p>MICHA extracted all publicly available information for the compounds such as primary targets, other potent targets, 
-			clinical information and physiochemical information.</p>
-			
-			<p>
-			Please continue to annotate your data by clicking on Annotate data or you can download the results by clicking Download results.
-			
-			
-			</p>
-			
-			
-           <!-- <div class="cleaner_h20"></div>-->
-            
-        </div>
-		
-		
-		
-	    <div id="banner_left_annotate" style="display:none;">
-        
-            <!--<p>MICHA (Minimal Information for CHemosensitivity Assay) is a protocol for the annotation and reporting of 
-			Chemosensensitivity assays by FAIRifying drug sensitivity screening data.<span> </span> </p>-->
-			
-			<p>Please annotate your data by filling any form .</p>
-			
-			<p>
-			Once finised , please click here to generate a report.             
-
-			
-			
-			</p>
-			
-				 <div class="banner_button">
-            	            	<a  href="#" id="ExportReporttoExcel_new">Download Results</a>
-
-            </div>
-			
-			
-           <!-- <div class="cleaner_h20"></div>-->
-            
-        </div>		
-		
-		
-        
-        <div id="banner_right" >
-        
-        	<div class="banner_button"  data-target="#templatemo_content">
-            	<a href="index.html" id="templatemo_content_top">Back</a>
-            </div>
-            
+               Chemosensensitivity assays by FAIRifying drug sensitivity screening data.<span> </span> </p>-->
+            <p>Please annotate your data by filling any form .</p>
+            <p>
+               Once finised , please click here to generate a report.             
+            </p>
             <div class="banner_button">
-            	<a  href="#" id="ExportReporttoExcel">Download Results</a>
+               <a  href="#" id="ExportReporttoExcel_new">Download Results</a>
             </div>
-            
+         </div>
+         <div id="banner_right" >
+            <div class="banner_button"  data-target="#templatemo_content">
+               <a href="/" id="templatemo_content_top">Step 1</a>  <!-- back -->
+            </div>
             <div class="banner_button">
-            	<a href="#expr_form_table" id="link">Annotate data</a>
+               <a href="#tab_forms" id="link" class="button-hand">Step 2</a>  <!--Annotate data</a>-->
             </div>
-        
-        </div>
-   
-
-        <div id="annotate_banner" style="display:none;">
-        
-        	<div class="banner_button" data-target="#templatemo_content">
-            	<a href="#" id="expr_form_banner">Experiment form</a>
-            </div>
-            
             <div class="banner_button">
-            	<a  href="#" id="cell_form_banner">Cells form</a>
+               <a  href="#" id="ExportReporttoExcel"  >Step 3</a>  <!--Download Results</a>-->
             </div>
-            
+         </div>
+         <div id="annotate_banner" style="display:none;">
+            <div class="banner_button" data-target="#templatemo_content">
+               <a href="#" id="expr_form_banner">Experiment form</a>
+            </div>
             <div class="banner_button">
-            	<a href="#" id="an_form_banner">Analysis form</a>
+               <a  href="#" id="cell_form_banner">Cells form</a>
             </div>
-			
-		
-        
-        </div>
-
-		
-    </div> <!-- end of templatemo_banner -->
-    
-    <div id="templatemo_content_top" class="moveto"></div>
-	
-    <div id="templatemo_content">
-    
-        <div class="section_w940">
-		
-		
-		
-		
-		
-		
-		
-		<!-- Button trigger modal 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
--->
-<!-- Modal -->
-        <div class="modal" id="expr_Modal">
-            <div class="modal-dialog modal-lg" style="width: 90%;">
-    		<form method="post" id="expr_form_modal">
-			
-                <div class="modal-content sky-form">
-                    <!-- Modal Header -->
-                    <div class="modal-header sky-form">
-                        <header class="modal-title">New Entry Create</header>
-                        <!-- <h4 ></h4>-->
-                        <button type="button" class="close" data-dismiss="modal" 
-						style="padding: 1rem 1rem;margin: 1rem 0rem 0rem auto;">&times;</button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="modal-body ">
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                            <strong>Success!</strong>Added successfully.
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <!--<header></header>-->
-                        <fieldset>
-                            <div class="row">
-						
-						
-						
-                          
-								
-													<section class="col col-6">
-                <label class="label" style="color:lightgrey;">Assay format</label>
-                <label class="select" >
-                    <select id="assa" name="Assay_format">
-                        <option value="biochemical" />Biochemical
-                        <option value="cell_based" />Cell based
-                        <option value="cell_free" />Cell free
-                        <option value="physiochemical" />Physiochemical
-                        <option value="tissue" />Tissue
-						<option value="organism_based" />Organism_based
-                    </select>
-                    <i></i>
-                </label>
-            </section>
-			
-							<section class="col col-6">
-									<label class="label" style="color:lightgrey;">Assay test type</label>
-									<label class="select">
-										<select name="Assay_test_type">
-											<option value="Invitro" />	Invitro
-											<option value="Invivo" />	Invivo
-											<option value="Exvivo" />	Exvivo
-											<option value="Other" />	Other
-										</select>
-										<i></i>
-									</label>
-								</section>
-
-                            </div>
-                            <div class="row">
-								
-								
-								<section class="col col-6">
-									<label class="label" style="color:lightgrey;">Detection technology</label>
-									<label class="select">
-										<select name="Detection_technology">
-											<option value="fluoresecence" />	Fluoresecence
-											<option value="luminescence" />		Luminescence
-											<option value="spectrophotometry" />Spectrophotometry
-											<option value="radiometry" />		Radiometry
-											<option value="microscopy" />		Microscopy
-											<option value="label_free_technology" />Label free technology
-											<option value="fluorescence_polarization" />Fluorescence_polarization
-											<option value="TRF" />				TRF
-											<option value="TR_FRET" />			TR FRET
-											<option value="AlphaScreen" />		AlphaScreen
-											<option value="qPCR" />				qPCR
-											<option value="termal_shift" />		Termal shift
-											
-										</select>
-										
-										
-										<i></i>
-									</label>
-								</section>
-								
-								
-													<section class="col col-6">
-									<label class="label" style="color:lightgrey;">End Point mode</label>
-									<label class="select">
-										<select name="Endpoint_mode">
-											<option value="activation" />			Activation
-											<option value="cytotoxocity" />			Cytotoxocity
-											<option value="growth_inhibition" />	Growth inhibition
-											<option value="inhibition" />			Inhibition
-											<option value="inverse_agonist" />		Inverse agonist
-										</select>
-										<i></i>
-									</label>
-								</section>
-
-								
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <div class="row">
-							
-							
-								
-								
-								
-								
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Medium
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input autocomplete="off" id="Medium" name="Medium" type="text" placeholder="Medium">
-										<div id="suggesstion-box_Medium"></div>
-
-										
-										
-                                    </label>
-                                </section>
-								    <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Plate type
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input autocomplete="off" id="Plate_type" name="Plate_type" type="text" placeholder="Plate type">
-                                    	<div id="suggesstion-box_Plate_type"></div>
-
-									
-									
-									</label>
-                                </section>
-
-								
-                            </div>
-                            <div class="row">
-                               <!-- <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;"> Measurement
-                                        <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input id="Measurement" name="Measurement"  type="text" placeholder="Measurement">
-                                    </label>
-                                </section>-->
-								                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Cell density at plating
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input autocomplete="off" id="Cell_density_at_plating" name="Cell_density_at_plating"  type="text" placeholder="Cell density at plating">
-                                    	
-										<div id="suggesstion-box_Cell_density"></div>
-                                    
-									</label>
-                                </section>
-								
-								
-								 <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Time of treatment
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input id="Time_of_treatment" name="Time_of_treatment" type="text" placeholder="Time of treatment">
-                                    </label>
-                                </section>
-								
-								
-
-
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <div class="row">
-                               
-								
-								                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Dilution fold
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input autocomplete="off" id="dilution_fold" name="dilution_fold"  type="text" placeholder="Dilution fold">
-                                   		
-										<div id="suggesstion-box_dilution_fold"></div>
-
-
-								   </label>
-                                </section>
-								<section class="col col-6">
-                                    <label class="input" style="color:lightgrey;"> Vehicle
-                                        <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input autocomplete="off" id="vehicle" name="vehicle" type="text" placeholder="vehicle">
- 										<div id="suggesstion-box_vehicle"></div>
-                                   
-									
-									</label>
-                                </section>
-
-                            </div>
-                            <div class="row">
-                               
-								
-								                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Method dispensation
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input  autocomplete="off" id="method_dispensation" name="method_dispensation" type="text" placeholder="Method dispensation">
- 										<div id="suggesstion-box_method_dispensation"></div>
-                                   
-									
-									</label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Volume per well
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input autocomplete="off" id="volume_per_well" name="volume_per_well" type="text" placeholder="Volume per well">
-                                   
-										<div id="suggesstion-box_volume_per_well"></div>
-
-								   </label>
-                                </section>
-
-
-                            </div>
-                        </fieldset>
-                     
-                        <footer class="modal-footer">
-						 
-						 <input type="hidden" name="id" id="id" />
-    					<input type="hidden" name="action" id="action" value="" />
-						
-						<input type="hidden" name="filename" id="filename" value="" />
-
-    					<input type="submit" name="save" id="save" class="btn btn-info" value="Save" />
-
-                           <!-- <button type="button" class="btn btn-success" id="SubmitCreate_expr_Form" style="width:10%;float:right;">Create</button>-->
-                            <button type="button" class="btn btn-danger" data-dismiss="modal" style="width:10%;float:right;margin-right:4px;">Close</button>
-                        </footer>
-                    </div>
-                </div>
-				</form>
+            <div class="banner_button">
+               <a href="#" id="an_form_banner">Analysis form</a>
             </div>
-        </div>
-		
-												<div class="card" id="expr_whole" style="display:none;">
-													<div class="card-header">
-														Experiments
-														<button style="float: right; font-weight: 900;" class="btn btn-info btn-sm" id="addRecord_expr"
-														data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#expr_Modal">
-															Create a new entry
-														</button>
-													</div>
-													<div class="card-body">
-														<div class="table-responsive">
-															<table id="expr_form_table" class="display" style="clear:both;table-layout:fixed;width:100%;">
-																<thead>
-																	<tr>
-																		<th width="50px"></th>	
-																		<th width="50px"></th>					
-																		<th width="188px">Assay format</th>					
-																		<th width="188px">Assay test type</th>
-																		<th width="188px">Detection technology</th>
-																		<th width="188px">Endpoint mode</th>	
-																		<th width="188px">Medium</th>	
-																		<th width="188px">Plate type</th>	
-																		<!-- <th width="188px">Measurement</th>-->	
-																		<th width="188px">Cell density at plating</th>	
-																		<th width="188px">Time of treatment</th>	
-																		<th width="188px">Dilution fold</th>	
-																		<th width="188px">Vehicle</th>	
-																		<th width="188px">Method dispensation</th>	
-																		<th width="188px">Volume per well</th>					
-																	</tr>
-																</thead>
-															</table>
-														</div>
-													</div>
-												</div>
-							
-	
-	
-	
-	
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!-----------------------------cell_line form-------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-        <div class="modal" id="cell_Modal">
-            <div class="modal-dialog modal-lg" style="width: 90%;">
-			   <form method="post" id="cell_form_modal">
-                <div class="modal-content sky-form">
-                    <!-- Modal Header -->
-                    <div class="modal-header sky-form">
-                        <header class="modal-title">New Entry Create</header>
-                        <!-- <h4 ></h4>-->
-                        <button type="button" class="close" data-dismiss="modal" 
-						style="padding: 1rem 1rem;margin: 1rem 0rem 0rem auto;">&times;</button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="modal-body ">
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                            <strong>Success!</strong>Added successfully.
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <!--<header></header>-->
-                        <fieldset>
-                            <div class="row">
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Cell line name
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-										
-                                        <input autocomplete="off" type="text" name="Cell_line_name" id="Cell_line_name" type="text" placeholder="Cell line name">
-                                        <div id="suggesstion-box_Cell_line_name"></div>
-
-                                    </label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Cell line provenance
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-										
-                                        <input autocomplete="off" name="Cell_line_provenance" id="Cell_line_provenance" type="text" 
-										placeholder="Cell line provenance">
-                                        <div id="suggesstion-box_Cell_line_provenance"></div>
-										
-										
-										
-										
-                                    </label>
-                                </section>
-                            </div>
-                            <div class="row">
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;"> ID
-                                        <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input name="CID" id="CID" type="text" placeholder="ID">
-                                    </label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;"> Cell type
-                                        <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input name="Cell_type" id="Cell_type" type="text" placeholder="Cell type">
-                                    </label>
-                                </section>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <div class="row">
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;"> Cell line organism
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input name="Cell_line_organism" id="Cell_line_organism" type="text" 
-										placeholder="Cell line organism">
-                                    </label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Passage number
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input name="Passage_number" id="Passage_number" type="text" placeholder="Passage number">
-                                    </label>
-                                </section>
-                            </div>
-                            <div class="row">
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Modifications
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input name="Modifications" id="Modifications" type="text" placeholder="Modifications">
-                                    </label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;"> Age
-                                        <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input name="Age" id="Age" type="text" placeholder="Age">
-                                    </label>
-                                </section>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <div class="row">
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Sex
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input name="Sex" id="Sex" type="text" placeholder="Sex">
-                                    </label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Diagnosis
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input name="Diagnosis" id="Diagnosis" type="text" placeholder="Diagnosis">
-                                    </label>
-                                </section>
-                            </div>
-                            <div class="row">
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Sample material
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input name="Sample_material" id="Sample_material" type="text" placeholder="Sample material">
-                                    </label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;"> Date of evaluation
-                                        <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input name="Date_of_evaluation" id="Date_of_evaluation" type="text" placeholder="Date of evaluation">
-                                    </label>
-                                </section>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <div class="row">
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Date of sampling
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input name="Date_of_sampling" id="Date_of_sampling" type="text" placeholder="Date of sampling">
-                                    </label>
-                                </section>
-                             
-                            </div>
-                        </fieldset>
-
-
-                        <footer class="modal-footer">
-											 <input type="hidden" name="id_c" id="id_c" />
-    					<input type="hidden" name="action_c" id="action_c" value="" />  
-						
-						<input type="hidden" name="filename_c" id="filename_c" value="" />
-
-    					<input type="submit" name="save_c" id="save_c" class="btn btn-info" value="Save" />
-
-                            <!--<button type="button" class="btn btn-success" id="SubmitCreate_cell_Form" style="width:10%;float:right;">Create</button>-->
-                            <button type="button" class="btn btn-danger" data-dismiss="modal" style="width:10%;float:right;margin-right:4px;">Close</button>
-                        </footer>
-                    </div>
-                </div>
-			</form>
+         </div>
+      </div>
+      <!-- end of templatemo_banner -->
+      <div id="templatemo_content_top" class="moveto"></div>
+      <div id="templatemo_content">
+         <div class="section_w940">
+            <!--------------------------expr_line form--------->
+            <?php include 'modal_forms/expr_create.php'; ?>
+            <!--------------------------cell_line form--------->
+            <?php include 'modal_forms/cell_line_create.php'; ?>
+            <!-----------------------------analysis form------->
+            <?php include 'modal_forms/analysis_create.php'; ?>
+            <!-----------------form tabs-------------->
+            <?php include 'form_tabs/form_tabs.php'; ?>
+            <!-------------------------------Upload file----------------------------------------------->
+            <!----------------------------------------------------------------------------------------->
+            <div class="box margin_r30 box_border" id="style_upload" style="width: 900px;border-right: 0px dotted #999;">
+               <div   id="dropme">
+                  <div id="results_table" style="display:none;">
+                     <?php include 'tables/result.php'; ?>
+                  </div>
+               </div>
             </div>
-        </div>
-		
-		
-		<div class="card" id="cell_whole" style="display:none;">
-			<div class="card-header">
-				Cell line
-				<button style="float: right; font-weight: 900;" class="btn btn-info btn-sm"  id="addRecord_cell"
-				data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#cell_Modal">
-					Create a new entry
-				</button>
-			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<table id="cell_form_table" class="display" style="clear:both;table-layout:fixed;width:100%;">
-						<thead>
-							<tr>
-								<th width="50px"></th>	
-								<th width="50px"></th>					
-								<th width="188px">Cell line_name</th>					
-								<th width="188px">Cell line provenance</th>					
-								<th width="188px">ID</th>
-								<th width="188px">Cell type</th>
-								<th width="188px">Cell line organism</th>	
-								<th width="188px">Passage number</th>	
-								<th width="188px">Modifications</th>	
-								<th width="188px">Age</th>	
-								<th width="188px">Sex</th>	
-								<th width="188px">Diagnosis</th>	
-								<th width="188px">Sample material</th>	
-								<th width="188px">Date of evaluation</th>	
-								<th width="188px">Date of sampling</th>	
-							</tr>
-						</thead>
-					</table>
-				</div>
-			</div>
-		</div>
-
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!-----------------------------analysis form-------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------->
-<!----------------------------------------------------------------------------------->
-
-        <div class="modal" id="analysis_Modal">
-            <div class="modal-dialog modal-lg" style="width: 90%;">
-				<form method="post" id="analysis_form_modal">
-                <div class="modal-content sky-form">
-                    <!-- Modal Header -->
-                    <div class="modal-header sky-form">
-                        <header class="modal-title">New Entry Create</header>
-                        <!-- <h4 ></h4>-->
-                        <button type="button" class="close" data-dismiss="modal" 
-						style="padding: 1rem 1rem;margin: 1rem 0rem 0rem auto;">&times;</button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="modal-body ">
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                            <strong>Success!</strong>Added successfully.
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <!--<header></header>-->
-                        <fieldset>
-                             <!--<div class="row">
-                              
-							   <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Analysis normalization
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input id="Analysis_Normalization" name="Analysis_Normalization" type="text" 
-										placeholder="Analysis Normalization">
-                                    </label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Analysis formulas
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input id="Analysis_Formulas" name="Analysis_Formulas" type="text" placeholder="Analysis Formulas">
-                                    </label>
-                                </section>
-                            </div> -->
-                            <div class="row">
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;"> Analysis reference
-                                        <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input autocomplete="off" id="Analysis_reference" name="Analysis_reference"  type="text" placeholder="web link or DOI ">
-										
-                                   
-										<div id="suggesstion-box_Analysis_reference"></div>
-										
-										
-                                    </label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;"> Analysis metric
-                                        <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input  autocomplete="off" id="Analysis_result" name="Analysis_result" type="text" placeholder="IC50, AC50, ..etc">
-                                    										<div id="suggesstion-box_Analysis_result"></div>
-
-									
-									</label>
-                                </section>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                           <!-- <div class="row">
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Analysis pipeline name
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input id="Analysis_pipeline_name" name="Analysis_pipeline_name" type="text" 
-										placeholder="Analysis pipeline name">
-                                    </label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Analysis pipeline	address
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input id="Analysis_pipeline_Address" name="Analysis_pipeline_Address" type="text" 
-										placeholder="Analysis pipeline Address">
-                                    </label>
-                                </section>
-                            </div>-->
-                            <div class="row">
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;">Min concentration
-                                        <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input autocomplete="off" id="min_concentration" name="min_concentration" type="text" 
-										placeholder="units in nM">
-										<div id="suggesstion-box_min_concentration"></div>
-										
-										
-                                    </label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="input" style="color:lightgrey;"> Max concentration
-                                        <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input autocomplete="off" id="max_concentration" name="max_concentration" type="text" 
-										placeholder="units in nM">
-																				<div id="suggesstion-box_max_concentration"></div>
-
-                                    </label>
-                                </section>
-                            </div>
-                        </fieldset>
-                     
-
-                        <footer class="modal-footer">
-												 <input type="hidden" name="id_an" id="id_an" />
-    					<input type="hidden" name="action_an" id="action_an" value="" />
-						
-						<input type="hidden" name="filename_an" id="filename_an" value="" />
-
-    					<input type="submit" name="save_an" id="save_an" class="btn btn-info" value="Save" />
-
-                            <!--<button type="button" class="btn btn-success" id="SubmitCreate_analysis_Form" style="width:10%;float:right;">Create</button>-->
-                            <button type="button" class="btn btn-danger" data-dismiss="modal" style="width:10%;float:right;margin-right:4px;">Close</button>
-                        </footer>
-                    </div>
-                </div>
-			</form>
-            </div>
-        </div>
-	
-	
-
-												<div class="card" id="an_whole" style="display:none;">
-													<div class="card-header">
-														Analysis
-														<button style="float: right; font-weight: 900;" class="btn btn-info btn-sm"  id="addRecord_analysis"
-														data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#analysis_Modal">
-															Create a new entry
-														</button>
-													</div>
-													<div class="card-body">
-														<div class="table-responsive">
-															<table id="analysis_form_table" class="display" style="clear:both;table-layout:fixed;width:100%;">
-																<thead>
-																	<tr>
-																		<th width="50px"></th>	
-																		<th width="50px"></th>					
-																		<!--<th width="200px">Analysis normalization</th>					
-																		<th width="188px">Analysis formulas</th>-->					
-																		<th width="188px">Analysis reference</th>
-																		<th width="188px">Analysis metric</th>
-																		<!--<th width="200px">Analysis pipeline name</th>	
-																		<th width="220px">Analysis pipeline address</th>-->	
-																		<th width="188px">Min concentration</th>	
-																		<th width="188px">Max concentration</th>	
-				
-																	</tr>
-																</thead>
-															</table>
-														</div>
-													</div>
-												</div>
-
-
-	<!--<div class="box margin_r30 box_border"  style="width: 900px;border-right: 0px dotted #999;" id="table_expr">   		
-		<div class="panel-heading">
-			<div class="row">
-				<div class="col-md-10">
-					<h3 class="panel-title"></h3>
-				</div>
-				<div class="col-md-4" align="right" style="position: absolute;
-right: 10px;
-top: 5px; ">
-					<button type="button" name="add" id="addRecord_expr" class="btn btn-success" data-toggle="modal" data-target="#expr_Modal">Add New Record</button>
-				</div>
-			</div>
-		</div>
-		<br>
-		<table id="expr_form_table" class="display" style="clear:both;table-layout:fixed;width:100%;">
-			<thead>
-				<tr>
-					<th width="50px"></th>	
-					<th width="50px"></th>					
-					<th width="188px">Assay Name</th>					
-					<th width="188px">Assay format</th>					
-					<th width="188px">Assay test type</th>
-					<th width="188px">Detection technology</th>
-					<th width="188px">Endpoint mode</th>	
-					<th width="188px">Medium</th>	
-					<th width="188px">Plate type</th>	
-					<th width="188px">Measurement</th>	
-					<th width="188px">Cell density at plating</th>	
-					<th width="188px">Time of treatment</th>	
-					<th width="188px">dilution_fold</th>	
-					<th width="188px">vehicle</th>	
-					<th width="188px">method_dispensation</th>	
-					<th width="188px">volume_per_well</th>					
-				</tr>
-			</thead>
-		</table>
-	</div>
-	
-	-->
-	<!------------------------------------------------->
-	<!------------------------------------------------->
-	<!------------------------------------------------->
-	<!------------------------------------------------->
-	<!------------------------------------------------->
-
-		<!-------------------------------Upload file----------------------------------------------->
-		<!----------------------------------------------------------------------------------------->
-		   <div class="box margin_r30 box_border" id="style_upload" style="width: 900px;border-right: 0px dotted #999;">
-            <div   id="dropme">
-				<div id="results_table" style="display:none;">
-				<table id="results" class="display" style="clear:both;table-layout:fixed;width:100%;">
-				<thead>
-				  <tr>
-					 <th width="188px">					  
-						Compound name
-					 </th>
-					 <th width="188px">					  
-						Inchikey
-					 </th>
-					 <th width="188px">					 
-						Primary target
-					 </th>
-					 					 
-					<th width="188px"> 
-						Other potent target ids
-					</th>				 			 
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='This is the max clinical phase for compound that has been clinically tested. This is automatically extracted by MICHA using ChEMBL API.'
-						   >?</p>
-						Max phase
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Cross referencing drug databases: Provide hyperlinks to other compound databases such as: Pubchem, ChEMBL, DTC, BindingDB, Drugbank, Zinc, emolecules, atlas, gtopDB, Chebi, PharmGKB, sure ChEMBL , Lincs.'>
-						   ?
-						</p>
-						Cross ref
-					 </th>
-					 <th width="188px">
-					 
-						Drug indications
-					 </th>
-
-					 <th width="188px"> 
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Molecular weight of parent compound'>?</p>
-						mw freebase
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Measure of hydrophobicity'>?</p>
-						Alogp
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Number hydrogen bond acceptors'>?</p>
-						Hba
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Number hydrogen bond donors'>?</p>
-						Hbd
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Polar surface area'>?</p>
-						Psa
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Number rotatable bonds'>?</p>
-						Rtb
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Indicates whether the compound passes the rule-of-three (mw < 300, logP < 3 etc)'>?</p>
-						Num lipinski ro5 violations
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='The most acidic pKa calculated using ACDlabs v12.01'>?</p>
-						Acd most apka
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='The most basic pKa calculated using ACDlabs v12.01'>?</p>
-						Acd most bpka
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='The calculated octanol/water partition coefficient using ACDlabs v12.01'>?</p>
-						Acd logp
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='The calculated octanol/water distribution coefficient at pH7.4 using ACDlabs v12.01'>?</p>
-						Acd logd
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Molecular weight of the full compound including any salts'>?</p>
-						Full mwt
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Number of aromatic rings'>?</p>
-						Aromatic rings
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Number of heavy (non-hydrogen) atoms'>?</p>
-						Heavy atoms
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Weighted quantitative estimate of drug likeness (as defined by Bickerton et al., Nature Chem 2012)'>?</p>
-						Qed weighted
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Monoisotopic parent molecular weight'>?</p>
-						Mw monoisotopic
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Molecular formula for the full compound (including any salt)'>?</p>
-						Full molformula
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title="Number of hydrogen bond acceptors calculated according to Lipinski's original rules (i.e., N + O count))">?</p>
-						Hba lipinski
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title="Number of hydrogen bond donors calculated according to Lipinski's original rules (i.e., NH + OH count)">?</p>
-						Hbd lipinski
-					 </th>
-					 <th width="188px">
-						<p style='text-align: center;cursor: pointer;display: inline-block; position: relative; margin-left:0em; float:
-						   right;width: 20.6px;border-radius: 10px;background: #bacabe;'class='tool-tip2 tool-tip__icon'
-						   data-toggle='tooltip' data-placement='top'
-						   title='Cross referencing drug databases: Provide hyperlinks to other compound databases such as: Pubchem, ChEMBL, DTC, BindingDB, Drugbank, Zinc, emolecules, atlas, gtopDB, Chebi, PharmGKB, sure ChEMBL , Lincs.'>
-						   ?
-						</p>
-						Cross ref
-					 </th>
-		  </tr>
-		</thead>
-		</table>
-
-	</div>
-        </div>				                    
-            </div>
-		<!----------------------------------------------------------------------------------------->
-		<!----------------------------------------------------------------------------------------->
-		<!----------------------------------------------------------------------------------------->
-		<!----------------------------------------------------------------------------------------->
-		<!----------------------------------------------------------------------------------------->
-		<!----------------------------------------------------------------------------------------->
-		<!----------------------------------------------------------------------------------------->
-		<!----------------------------------------------------------------------------------------->
+            <!----------------------------------------------------------------------------------------->
             <div class="cleaner"></div>
-        </div>
-    
-    </div>
-    <div id="templatemo_content_bottom"></div>
-   
-
-
-<?php include 'theme_files/footer.php' ;?>
-
-
-
-<div class="cleaner_h40"></div>
-
-	
-	
-	
-	
+         </div>
+      </div>
+      <div id="templatemo_content_bottom"></div>
+      <?php include 'theme_files/footer.php' ;?>
+      <div class="cleaner_h40"></div>
 	</div> <!-- end of footer -->
 </div> <!-- end of wrapper -->
 </body>
@@ -1365,16 +152,6 @@ top: 5px; ">
 	   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ur, s);
 	   })();
 	</script>
-
-
-
-
-
-
-
-
-
-
 
 <script type="text/javascript">var filename = "compinchi1424905e9dca89d4b3a.xlsx";</script>
 <script type="text/javascript">var storagename = "comp_inchi.xlsx";</script>
@@ -2351,6 +1128,8 @@ console.log("success");
 
 
 $('#ExportReporttoExcel').on('click', function() {
+					document.getElementById('dropme').style.display = "block";
+
   $('.buttons-excel').click()
 });
 $('#ExportReporttoExcel_new').on('click', function() {

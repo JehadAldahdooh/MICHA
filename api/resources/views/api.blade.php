@@ -200,7 +200,8 @@ font-style: italic;
 
     <div class="app-desc">
         <p>
-            MICHA is a protocol for the annotation and reporting of Chemosensitivity assays by FAIRifying drug sensitivity screening data. It can provide publicly available information for the compounds such as primary targets, other potent targets, clinical phase and physicochemical properties by inputting standard_inchiKey (either through MICHA website (https://micha-protocol.org/micha_api) or programmatically by using API (e.g. https://micha-protocol.org/micha_api/get_targets/XGALLCVXEZPNRQ-UHFFFAOYSA-N).
+            MICHA is a protocol for the annotation and reporting of Chemosensitivity assays by FAIRifying drug sensitivity screening data. It can provide publicly available information for the compounds such as primary targets, other potent targets, clinical phase and physicochemical properties by inputting standard_inchiKey (either through MICHA website (https://micha-protocol.org/micha_api) or programmatically 
+			by using API (e.g. <a href="https://micha-protocol.org/micha_api/get_targets/XGALLCVXEZPNRQ-UHFFFAOYSA-N">https://micha-protocol.org/micha_api/get_targets/XGALLCVXEZPNRQ-UHFFFAOYSA-N</a>).
         </p>
     </div>
 
@@ -238,6 +239,8 @@ font-style: italic;
     <div class="app-desc">
         <p>
             This API endpoint will return annotations for fairified drug screening protocols in MICHA. Input will be standard inchikey and API will return tested cell-lines and experimental settings for input compound (if any)
+			
+			e.g. <a href="https://micha-protocol.org/micha_api/annotations/XGALLCVXEZPNRQ-UHFFFAOYSA-N">https://micha-protocol.org/micha_api/annotations/XGALLCVXEZPNRQ-UHFFFAOYSA-N</a>
         </p>
     </div>
 
