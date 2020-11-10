@@ -55,14 +55,7 @@
       <div id="templatemo_wrapper">
       <?php include 'theme_files/header.php' ;?>
       <!-- end of templatemo_menu -->
-      <div id="templatemo_search">
-         <div id="search_box">
-            <form action="#" method="get">
-               <input type="text" value="Enter a keyword..." name="q" size="10" id="searchfield" title="searchfield" onfocus="clearText(this)" onblur="clearText(this)" />
-               <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" />
-            </form>
-         </div>
-      </div>
+	  <?php include 'theme_files/search_compound.php' ;?>
       <!-- end of search -->
       <div id="templatemo_banner">
          <div id="banner_left">

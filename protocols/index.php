@@ -43,134 +43,30 @@
 	<link rel="stylesheet" type="text/css" href="../bootstrap.min.css?version=3" >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-		
 	
+    <link rel="stylesheet" type="text/css" href="../theme_files/css/main.css?version=2" >
+	<link rel="stylesheet" type="text/css" href="../theme_files/css/scrollable_banner_right.css?version=3" >
 
-    <script language="javascript" type="text/javascript">
-        function clearText(field) {
-            if (field.defaultValue == field.value) field.value = '';
-            else if (field.value == '') field.value = field.defaultValue;
-        }
-    </script>
-	<style>
-		a:hover{
-			text-decoration: none;
-		}
-		
-		
-		
-		
-	#banner_right::-webkit-scrollbar {
-    width: 12px;
-}
- 
-/* Track */
-#banner_right::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
- 
-/* Handle */
-#banner_right::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: 	#ffd39b;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-}
-#banner_right::-webkit-scrollbar-thumb:window-inactive {
-	background: 	#ffd39b;
-}	
-		
-		
-		
-		
-		        @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
-		     
-        
 
-        .numbering {
-            max-width: 350px;
-            counter-reset: my-awesome-counter;
-            list-style: none;
-            padding-left: 40px;
-        }
-        
-        .numbering li {
-            margin: 0 0 0.5rem 0;
-            counter-increment: my-awesome-counter;
-            position: relative;
-        }
-        
-        .numbering li::before {
-            content: counter(my-awesome-counter);
-            color: #fcd000;
-            font-size: 1.5rem;
-            font-weight: bold;
-            position: absolute;
-            --size: 32px;
-            left: calc(-1 * var(--size) - 10px);
-            line-height: var(--size);
-            width: var(--size);
-            height: var(--size);
-            top: 0;
-            transform: rotate(-10deg);
-            background: black;
-            border-radius: 50%;
-            text-align: center;
-            box-shadow: 1px 1px 0 #999;
-        }
+<script language="javascript" type="text/javascript">
+	function clearText(field) {
+		if (field.defaultValue == field.value) field.value = '';
+		else if (field.value == '') field.value = field.defaultValue;
+	}
 
-        
-        .isnot {
-            line-height: 1.7em;
-            padding-top: 5px letter-spacing: 1px;
-           // font-family: Tahoma, Geneva, sans-serif;
-            font-size: 14px;
-            color: black;
-            text-align: justify;
-        }
-		
-		.p_ablout{
-            line-height: 1.7em; 
-			//padding-top:5px;
-			letter-spacing: 1px;
-			//font-family: Tahoma, Geneva, sans-serif;
-			//font-size: 14px;color: 
-			black;text-align: justify;		
-		}
-
-		
-		
-		
-		
-		
-	</style>
-	
-	<?php
-		ini_set('display_errors', 1);
-		ini_set('display_startup_errors', 1);
-		error_reporting(E_ALL);
-	?>
-	<script>
 $(document).ready(function() {
     var p_name = 'FIMM';
-    console.log(p_name);
 	
     //cell line 
     var table1 = $('#cell_IMTM').DataTable({
         serverSide: true,
-        // autoWidth: false, // as I chane it myself below
-        pageLength: 10, // default is 5 to be shown
-        // scrollX: true,
-        //"order": [[ 0, "desc" ]],
+        pageLength: 10, 
         'ajax': {
             url: "covid19_data_all.php",
             //type:"POST",  
             "data": function(d) {
                 d.type = 'cell',
-                d.p_name = p_name
+                    d.p_name = p_name
             },
             beforeSend: function() {
                 $('#cell_IMTM > tbody').html(
@@ -189,7 +85,6 @@ $(document).ready(function() {
 
     //results 2 expr
     var table2 = $('#expr_IMTM').DataTable({
-
         serverSide: true,
         pageLength: 10, // default is 5 to be shown
         // scrollX: true,
@@ -198,7 +93,7 @@ $(document).ready(function() {
             //type:"POST",  
             "data": function(d) {
                 d.type = 'expr',
-                d.p_name = p_name
+                    d.p_name = p_name
             },
             beforeSend: function() {
                 $('#expr_IMTM > tbody').html(
@@ -207,7 +102,7 @@ $(document).ready(function() {
                     '</tr>'
                 );
             }
-        }, 
+        },
         "fixedHeader": {
             header: true,
         },
@@ -223,15 +118,13 @@ $(document).ready(function() {
     //analysis
     var table3 = $('#analysis_IMTM').DataTable({
         serverSide: true,
-        // autoWidth: false, // as I chane it myself below
-        pageLength: 10, // default is 5 to be shown
-        // scrollX: true,
+        pageLength: 10, 
         'ajax': {
             url: "covid19_data_all.php",
             //type:"POST",  
             "data": function(d) {
                 d.type = 'analysis',
-                d.p_name = p_name
+                    d.p_name = p_name
             },
             beforeSend: function() {
                 $('#analysis_IMTM > tbody').html(
@@ -240,7 +133,7 @@ $(document).ready(function() {
                     '</tr>'
                 );
             }
-        }, 
+        },
         responsive: 'true',
         deferRender: true,
     });
@@ -249,15 +142,13 @@ $(document).ready(function() {
     //compound
     var table4 = $('#comp_IMTM').DataTable({
         serverSide: true,
-        // autoWidth: false, // as I chane it myself below
-        pageLength: 10, // default is 5 to be shown
-        // scrollX: true,
+        pageLength: 10, 
         'ajax': {
             url: "covid19_data_all.php",
             //type:"POST",  
             "data": function(d) {
                 d.type = 'compound',
-                d.p_name = p_name
+                    d.p_name = p_name
             },
             beforeSend: function() {
                 $('#comp_IMTM > tbody').html(
@@ -266,18 +157,16 @@ $(document).ready(function() {
                     '</tr>'
                 );
             }
-        }, 
+        },
         responsive: 'true',
         deferRender: true,
     });
 
 
-
-
     //Here is correct as it will created after the datable initialized, otherwise you will get an error 
     //document.getElementsByClassName('dt-buttons')[0].style.display = "none";
     //document.getElementById('results_filter').style.display = "none";
-	
+
     $('#FIMM_pro').click(function(e) {
         e.preventDefault();
         p_name = 'FIMM';
@@ -294,29 +183,15 @@ $(document).ready(function() {
             ' '
         );
         //$('#pro_text').css('text-align','justify');
-        console.log("sdsds");
         $('.noHover').attr("href", "https://www.fimm.fi/");
         document.getElementById("institute_link").style.display = "inline-block";
 
     });
 
 
-
-
-    /*
-    p_name='';
-    table1.ajax.reload();
-    table2.ajax.reload();
-    table3.ajax.reload();
-    table4.ajax.reload();
-    */
-
-
     //covid 19
     $('#IMTM_pro').click(function(e) {
-
         e.preventDefault();
-
         $('#h2_title').text('Covid19 protocol');
         p_name = 'Covid19';
         table1.ajax.reload();
@@ -326,10 +201,8 @@ $(document).ready(function() {
 
         $('#pro_text').text('We are working on the FAIRification of Covid19 drug screening studies.');
         //$('#pro_text').css('text-align','justify');
-        $('.noHover').attr("href", "http://micha.fimm.fi/covid19");
+        $('.noHover').attr("href", "https://micha-protocol.org/covid19");
         document.getElementById("institute_link").style.display = "inline-block";
-
-
     });
 
 
@@ -337,9 +210,7 @@ $(document).ready(function() {
 
     $('#Mario_pro').click(function(e) {
         e.preventDefault();
-
         $('#h2_title').text('Mario protocol protocol');
-
         p_name = 'MarioNegri';
         table1.ajax.reload();
         table2.ajax.reload();
@@ -357,14 +228,9 @@ $(document).ready(function() {
 
     });
 
-
-
-
     $('#GDSC_pro').click(function(e) {
         e.preventDefault();
-
         $('#h2_title').text('Genomics of Drug Sensitivity (GDSC)  protocol');
-
         p_name = 'gdsc';
         table1.ajax.reload();
         table2.ajax.reload();
@@ -379,19 +245,14 @@ $(document).ready(function() {
 
     });
 
-
-
     $('#CCLE_pro').click(function(e) {
         e.preventDefault();
-
         $('#h2_title').text('Cancer Cell Line Encyclopedia (CCLE)');
-
         p_name = 'ccle';
         table1.ajax.reload();
         table2.ajax.reload();
         table3.ajax.reload();
         table4.ajax.reload();
-
         $('#pro_text').text('Cancer Cell Line Encyclopedia (CCLE) performed comprehensive screening of hundreds of cell lines across various anti-cancer therapeutics.');
         //$('#pro_text').css('text-align','justify');
         $('.noHover').attr("href", "https://portals.broadinstitute.org/ccle/about");
@@ -399,57 +260,32 @@ $(document).ready(function() {
 
     });
 
-
-
-
     $('#CTRP_pro').click(function(e) {
         e.preventDefault();
-
         $('#h2_title').text('Cancer Therapeutics Response Portal (CTRP) ');
-
         p_name = 'ctrpv2';
         table1.ajax.reload();
         table2.ajax.reload();
         table3.ajax.reload();
         table4.ajax.reload();
-
         $('#pro_text').text('The Cancer Therapeutics Response Portal (CTRP) links genetic, lineage, and other cellular features of cancer cell lines to small-molecule sensitivity with the goal of accelerating discovery of patient-matched cancer therapeutics.');
         //$('#pro_text').css('text-align','justify');
         $('.noHover').attr("href", "https://portals.broadinstitute.org/ctrp.v2.1/");
         document.getElementById("institute_link").style.display = "inline-block";
-
     });
-
-
-
-
-});</script>
+});
+</script>
 </head>
 <body>
-    <div id="templatemo_wrapper">
+<div id="templatemo_wrapper">
 <?php include '../theme_files/header.php' ;?>
-
-    <div id="templatemo_search">
-    
-    	<div id="search_box">
-<!--	<script async src="https://cse.google.com/cse.js?cx=017046730853086508825:sckkkfpde90"></script>
-<div class="gcse-search"></div>-->
-
-            <form action="../compound.php" method="get">
-                <input type="text" value="Enter compound name..." name="c_name" size="10" id="searchfield" title="searchfield" 
-				onfocus="clearText(this)" onblur="clearText(this)" />
-                <input type="submit" name="" value="" alt="Search" id="searchbutton" title="Search" />
-            </form>
-        </div>
-    
-    </div>        <!----- end of search ----->
+<?php include '../theme_files/search_compound.php' ;?>
         <!------------------------->
         <!------------------------->
         <div id="templatemo_banner">
             <div id="banner_left">
                 <p id="pro_text" style="display: inline;">
-The FAIRified drug screening protocols are shown below:
-
+					The FAIRified drug screening protocols are shown below:
                     <span></span>
                 </p>
                 <div style="display:none;" id="institute_link" class="button_01">
@@ -457,23 +293,15 @@ The FAIRified drug screening protocols are shown below:
                 </div>
             </div>
             <div id="banner_right" style="overflow-y: scroll;">
-			
-							<div class="banner_button">
+				<div class="banner_button">
                     <a href="#IMTM" id="GDSC_pro">GDSC </a>
                 </div>
-				
-				
 				<div class="banner_button">
                     <a href="#IMTM" id="CCLE_pro">CCLE </a>
                 </div>
-				
-				
 				 <div class="banner_button">
                     <a href="#IMTM" id="CTRP_pro">CTRP </a>
                 </div>
-
-
-
                 <div class="banner_button" data-target="#templatemo_content">
                     <a href="#IMTM" id="FIMM_pro">FIMM</a>
                 </div>
@@ -483,11 +311,6 @@ The FAIRified drug screening protocols are shown below:
                 <div class="banner_button">
                     <a href="#IMTM" id="Mario_pro">Mario Negri </a>
                 </div>
-				
-				
-				
-				
-				
 				
             </div>
         </div>
@@ -502,13 +325,6 @@ The FAIRified drug screening protocols are shown below:
         <div id="templatemo_content_top"></div>
         <div id="templatemo_content">
             <div class="section_w940">
-
-                <!------------------------------------------------------------------------------------------------->
-                <!------------------------------------------------------------------------------------------------->
-                <!------------------------------------------------------------------------------------------------->
-                <!----------------------------           IMTM  protocol               ----------------------------->
-                <!------------------------------------------------------------------------------------------------->
-                <!------------------------------------------------------------------------------------------------->
                 <!------------------------------------------------------------------------------------------------->				
                 <!------------------------------------------------------------------------------------------------->
                 <div class="box margin_r30 box_border" style="width: 900px;border-right: 0px dotted #999;" id="IMTM">
@@ -645,49 +461,19 @@ The FAIRified drug screening protocols are shown below:
                     </div>
                 </div>				
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
                 <div class="cleaner"></div>
             </div>
         </div>
         <div id="templatemo_content_bottom"></div>
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!-- <div id="templatemo_content_bottom"></div>-->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
 		
 		<?php include '../theme_files/footer.php'; ?>
-
 
         <div class="cleaner_h40"></div>
     </div>
     <!-- end of footer -->
     </div>
     
-    	<script type="text/javascript">
+    <script type="text/javascript">
 	   window._urq = window._urq || [];
 	   _urq.push(['initSite', '1b1bafee-3533-4536-bdd8-3c02b964d2b8']);
 	   (function() {
@@ -696,8 +482,5 @@ The FAIRified drug screening protocols are shown below:
 	   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ur, s);
 	   })();
 	</script>
-
-
-
 </body>
 </html>

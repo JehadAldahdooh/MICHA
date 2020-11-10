@@ -1,0 +1,25 @@
+a:hover{
+	text-decoration: none;
+}
+
+#banner_right::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+#banner_right::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+#banner_right::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: 	#ffd39b;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+#banner_right::-webkit-scrollbar-thumb:window-inactive {
+	background: 	#ffd39b;
+}	

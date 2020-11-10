@@ -44,7 +44,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+      <link rel="stylesheet" type="text/css" href="theme_files/css/main.css?version=2" >
 
+      <link rel="stylesheet" type="text/css" href="theme_files/css/scrollable_banner_right.css?version=2" >
 
 
 
@@ -57,484 +59,292 @@
             else if (field.value == '') field.value = field.defaultValue;
         }
     </script>
-	<style>
-		a:hover{
-			text-decoration: none;
-		}
-		
-	
 
-
-
-
-
-
-
-	#banner_right::-webkit-scrollbar {
-    width: 12px;
-}
- 
-/* Track */
-#banner_right::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
- 
-/* Handle */
-#banner_right::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: 	#ffd39b;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-}
-#banner_right::-webkit-scrollbar-thumb:window-inactive {
-	background: 	#ffd39b;
-}	
-
-	
-	
-	
-	        @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
-		     
-        
-
-        .numbering {
-            max-width: 350px;
-            counter-reset: my-awesome-counter;
-            list-style: none;
-            padding-left: 40px;
-        }
-        
-        .numbering li {
-            margin: 0 0 0.5rem 0;
-            counter-increment: my-awesome-counter;
-            position: relative;
-        }
-        
-        .numbering li::before {
-            content: counter(my-awesome-counter);
-            color: #fcd000;
-            font-size: 1.5rem;
-            font-weight: bold;
-            position: absolute;
-            --size: 32px;
-            left: calc(-1 * var(--size) - 10px);
-            line-height: var(--size);
-            width: var(--size);
-            height: var(--size);
-            top: 0;
-            transform: rotate(-10deg);
-            background: black;
-            border-radius: 50%;
-            text-align: center;
-            box-shadow: 1px 1px 0 #999;
-        }
-
-        
-        .isnot {
-            line-height: 1.7em;
-            padding-top: 5px letter-spacing: 1px;
-           // font-family: Tahoma, Geneva, sans-serif;
-            font-size: 14px;
-            color: black;
-            text-align: justify;
-        }
-		
-		.p_ablout{
-            line-height: 1.7em; 
-			//padding-top:5px;
-			letter-spacing: 1px;
-			//font-family: Tahoma, Geneva, sans-serif;
-			//font-size: 14px;color: 
-			black;text-align: justify;		
-		}
-
-
-	</style>
 	<script>
-	$(document).ready(function() {
-		
-		var s_name='Fraunhofer IME';
-		
-		/*
-		
-		select * from fimm.micha_protocols where protocol_name='Covid19' and study_title='Fraunhofer IME'
-7:21
+$(document).ready(function() {
+
+var s_name = 'Fraunhofer IME';
+/*
+select * from fimm.micha_protocols where protocol_name='Covid19' and study_title='Fraunhofer IME'
 select * from fimm.micha_protocols where protocol_name='Covid19' and study_title='SARS-CoV-2, Nature,2020'
-7:22
 select * from fimm.micha_protocols where protocol_name='Covid19' and study_title='NCATS'
-
 */
-		
-		
-		    //cell line 
-			var jArray = <?php echo json_encode($alldic); ?> ;
-			var table1 = $('#results_1').DataTable({
-							
-        serverSide: true,
-       // autoWidth: false, // as I chane it myself below
-        pageLength: 10, // default is 5 to be shown
-       // scrollX: true,
-        //"order": [[ 0, "desc" ]],
-		  'ajax': {
-			url: "covid19_data.php",
-			//type:"POST",  
-			"data"   : function( d ) {
-				
-				d.action_c=s_name;
-				d.type='cell'
-               				
-			},
-			        beforeSend: function(){
-          $('#results_1 > tbody').html(
-            '<tr class="odd">' +
-              '<td valign="top" colspan="6" class="dataTables_empty">Loading&hellip;</td>' +
-            '</tr>'
-          );
+
+
+//Cell_line_table
+var table1 = $('#results_1').DataTable({
+    serverSide: true,
+    pageLength: 10, 
+    // scrollX: true,
+    'ajax': {
+        url: "covid19_data.php",
+        //type:"POST",  
+        "data": function(d) {
+            d.action_c = s_name;
+            d.type = 'cell'
+        },
+        beforeSend: function() {
+            $('#results_1 > tbody').html(
+                '<tr class="odd">' +
+                '<td valign="top" colspan="6" class="dataTables_empty">Loading&hellip;</td>' +
+                '</tr>'
+            );
+        }
+    }, 
+    responsive: 'true',
+    deferRender: true,
+    "scrollX": true,
+    "bjQueryUI": true,
+});
+
+
+//Experiment table
+var table2 = $('#results_2').DataTable({
+    serverSide: true,
+    pageLength: 10,
+    'ajax': {
+        url: "covid19_data.php",
+        //type:"POST",  
+        "data": function(d) {
+            d.action_c = s_name;
+            d.type = 'expr'
+        },
+        beforeSend: function() {
+            $('#results_2 > tbody').html(
+                '<tr class="odd">' +
+                '<td valign="top" colspan="6" class="dataTables_empty">Loading&hellip;</td>' +
+                '</tr>'
+            );
+        }
+    }, 
+    "fixedHeader": {
+        header: true,
+    },
+    "autoWidth": false,
+    deferRender: true,
+    "scrollX": true,
+});
+
+
+
+
+//Analysis Table
+var table3 = $('#results').DataTable({
+    serverSide: true,
+    pageLength: 10, 
+    'ajax': {
+        url: "covid19_data.php",
+        //type:"POST",  
+        "data": function(d) {
+            d.type = 'analysis',
+            d.action_c = s_name;
+        },
+        beforeSend: function() {
+            $('#results > tbody').html(
+                '<tr class="odd">' +
+                '<td valign="top" colspan="6" class="dataTables_empty">Loading&hellip;</td>' +
+                '</tr>'
+            );
+        }
+    }, 
+    responsive: 'true',
+    deferRender: true,
+});
+
+
+//Compound table
+var table4 = $('#results_comp').DataTable({
+    serverSide: true,
+    pageLength: 10, 
+    'ajax': {
+        url: "covid19_data.php",
+        //type:"POST",  
+        "data": function(d) {
+            d.type = 'compound',
+            d.action_c = s_name;
+        },
+        beforeSend: function() {
+            $('#results_comp > tbody').html(
+                '<tr class="odd">' +
+                '<td valign="top" colspan="6" class="dataTables_empty">Loading&hellip;</td>' +
+                '</tr>'
+            );
         }
 
 
-    },				//"fixedHeader": {
-				//header: true,
-				//},
-				//"autoWidth": false,
-				
-				responsive: 'true',
-				deferRender: true,
-				"scrollX": true		,		
-				"bjQueryUI" : true,
-
-            });
-			
-
-
-			
-			
-			
-			//results 2 expr
-			
-
-			var jArray2 = <?php echo json_encode($alldic); ?> ;
-			var table2 = $('#results_2').DataTable({
-								/*"aoColumnDefs": [ {
-                        "aTargets": [ 0 ],
-                        "mRender":function (data, type, full) {
-							console.log("hi print");
-							console.log(data[0]);
-							if(data[0]){
-															console.log("not comng");
-
-							return data.toString().match(/\d+(\.\d{1,2})?/g)[0];}else{
-								return '';
-								
-							}
-}
-
-                    }],*/
+    }, 
+    responsive: 'true',
+    deferRender: true,
+});
 
 
 
-				        serverSide: true,
-       // autoWidth: false, // as I chane it myself below
-        pageLength: 10, // default is 5 to be shown
-       // scrollX: true,
 
+//Here is correct as it will created after the datable initialized, otherwise you will get an error 
+//document.getElementsByClassName('dt-buttons')[0].style.display = "none";
+//document.getElementById('results_filter').style.display = "none";
 
-						  'ajax': {
-			url: "covid19_data.php",
-			//type:"POST",  
-			"data"   : function( d ) {
-				
-				d.action_c=s_name;  
-								d.type='expr'
+$('#FIMM_pro').click(function(e) {
+    $('#sname').text("Fraunhofer IME");
 
-			},
-			        beforeSend: function(){
-          $('#results_2 > tbody').html(
-            '<tr class="odd">' +
-              '<td valign="top" colspan="6" class="dataTables_empty">Loading&hellip;</td>' +
-            '</tr>'
-          );
-        }
+    s_name = 'Fraunhofer IME';
+    table1.ajax.reload();
+    table2.ajax.reload();
+    table3.ajax.reload();
+    table4.ajax.reload();
 
+    document.getElementById("general_text").style.display = "none";
+    document.getElementById("Fraunhofer_IME").style.display = "inline-block";
 
-    },				//"fixedHeader": {
+    console.log("text changed");
+    e.preventDefault();
+    $('#pro_text').text("Fraunhofer IME developped a drug screen protocol that was reported in" +
+        "Identification of inhibitors of SARS-CoV-2 in-vitro cellular toxicity in human" +
+        "(Caco-2) cells using a large scale drug repurposing collection"
+    );
+    //$('#pro_text').css('text-align','justify');
+    console.log("FIMM_pro");
+    $('.noHover').attr("href", "https://www.researchsquare.com/article/rs-23951/v1");
+    document.getElementById("institute_link").style.display = "inline-block";
 
-				"fixedHeader": {
-				header: true,
-				},
-				"autoWidth": false,
-				
-				//responsive: 'true',
-				deferRender: true,
-				"scrollX": true,
-            });
-			
-			
-	
-			
-			//analysis
-
-			var jArray3 = <?php echo json_encode($alldic); ?> ;
-
-			var table3 = $('#results').DataTable({
-				
-				//"aoColumnDefs": [ {
-                        //"aTargets": [ 0,1 ],
-                        //"mRender":function (data, type, full) {
-							//if(data[0] && data[1]){
-							//return data.toString().match(/\d+(\.\d{1,2})?/g)[0];}else{
-							//	return '';
-						//}}
-
-                   // }],
-
-
-				        serverSide: true,
-       // autoWidth: false, // as I chane it myself below
-        pageLength: 10, // default is 5 to be shown
-       // scrollX: true,
+});
 
 
 
-					  'ajax': {
-			url: "covid19_data.php",
-			//type:"POST",  
-			"data"   : function( d ) {
-												d.type='analysis',
+$('#SARS-CoV-2').click(function(e) {
 
-				d.action_c=s_name;  
-			},
-			        beforeSend: function(){
-          $('#results > tbody').html(
-            '<tr class="odd">' +
-              '<td valign="top" colspan="6" class="dataTables_empty">Loading&hellip;</td>' +
-            '</tr>'
-          );
-        }
+    s_name = 'SARS-CoV-2, Nature,2020';
+    table1.ajax.reload();
+    table2.ajax.reload();
+    table3.ajax.reload();
+    table4.ajax.reload();
 
 
-    },				//"fixedHeader": {
+    document.getElementById("general_text").style.display = "none";
+    document.getElementById("Fraunhofer_IME").style.display = "inline-block";
 
-				
-				responsive: 'true',
-				deferRender: true,
-            });
-			
-			
-			//compound
-			
-		
-			var jArray4 = <?php echo json_encode($alldic); ?> ;
+    console.log("text changed");
+    e.preventDefault();
 
-			var table4 = $('#results_comp').DataTable({
-				        serverSide: true,
-       // autoWidth: false, // as I chane it myself below
-        pageLength: 10, // default is 5 to be shown
-       // scrollX: true,
+    $('#sname').text("SARS-CoV-2, Nature,2020");
+    $('#pro_text').text("To identify small molecules targeting human proteins in the SARS-CoV-2 interactome, we sought ligands known to interact with the human proteins, often directly but also by pathway and complexes. Molecules were prioritised by the statistical significance of the interaction between the human and viral proteins");
+    //$('#pro_text').css('text-align','justify');
+    console.log("SARS-CoV-2");
+    $('.noHover').attr("href", "https://www.nature.com/articles/s41586-020-2286-9");
+    document.getElementById("institute_link").style.display = "inline-block";
+
+});
 
 
-						  'ajax': {
-			url: "covid19_data.php",
-			//type:"POST",  
-			"data"   : function( d ) {
-				d.type='compound',
-
-				d.action_c=s_name;  
-			},
-			        beforeSend: function(){
-          $('#results_comp > tbody').html(
-            '<tr class="odd">' +
-              '<td valign="top" colspan="6" class="dataTables_empty">Loading&hellip;</td>' +
-            '</tr>'
-          );
-        }
 
 
-    },				//"fixedHeader": {
+$('#NCATS').click(function(e) {
 
-				responsive: 'true',
-				deferRender: true,
-            });
-			
-			
-
-
-			//Here is correct as it will created after the datable initialized, otherwise you will get an error 
-			//document.getElementsByClassName('dt-buttons')[0].style.display = "none";
-			//document.getElementById('results_filter').style.display = "none";
-			
-			$('#FIMM_pro').click(function(e) {
-							$('#sname').text("Fraunhofer IME");
-
-				s_name='Fraunhofer IME';
-				table1.ajax.reload();
-				table2.ajax.reload();
-				table3.ajax.reload();
-				table4.ajax.reload();
-
-						    document.getElementById("general_text").style.display = "none";
-						    document.getElementById("Fraunhofer_IME").style.display = "inline-block";
-
-				console.log("text changed");
-			e.preventDefault();
-			$('#pro_text').text("Fraunhofer IME developped a drug screen protocol that was reported in"+ 
-			"Identification of inhibitors of SARS-CoV-2 in-vitro cellular toxicity in human"+
-			"(Caco-2) cells using a large scale drug repurposing collection"
-								);
-			//$('#pro_text').css('text-align','justify');
-			console.log("FIMM_pro");
-			$('.noHover').attr("href", "https://www.researchsquare.com/article/rs-23951/v1");
-		    document.getElementById("institute_link").style.display = "inline-block";
-			
-			});
-			
-			
-			
-			$('#SARS-CoV-2').click(function(e) {
-				
-				s_name='SARS-CoV-2, Nature,2020';
-				table1.ajax.reload();
-				table2.ajax.reload();
-				table3.ajax.reload();
-				table4.ajax.reload();
+    s_name = 'NCATS';
+    table1.ajax.reload();
+    table2.ajax.reload();
+    table3.ajax.reload();
+    table4.ajax.reload();
 
 
-						    document.getElementById("general_text").style.display = "none";
-						    document.getElementById("Fraunhofer_IME").style.display = "inline-block";
+    document.getElementById("general_text").style.display = "none";
+    document.getElementById("Fraunhofer_IME").style.display = "inline-block";
 
-				console.log("text changed");
-			e.preventDefault();
-			
-			/*In this study we identify 66 druggable human proteins or host factors targeted by 69 
-			compounds (29 FDA-approved drugs, 12 drugs in clinical trials, and 28 preclinical compounds).
-			Screening a subset of these in multiple viral assays identified two sets of pharmacological
-			agents that displayed antiviral activity: inhibitors of mRNA translation and predicted 
-			regulators of the Sigma1 and Sigma2 receptors. */
+    console.log("text changed");
+    e.preventDefault();
 
-			$('#sname').text("SARS-CoV-2, Nature,2020");
+    $('#sname').text("NCATS");
 
+    $('#pro_text').text("NCATs uses live SARS-CoV-2 virus and measures the ability of compounds to reverse viral-induced CPE in Vero E6 host cells. Viral infection and replication leads to a loss of host cell viability, which is indirectly measured by an endpoint assessment of host cell viability after 72 hours. Compounds with antiviral activity protect the host cells from viral-induced CPE, thereby increasing viability.");
+    //$('#pro_text').css('text-align','justify');
+    //console.log("SARS-CoV-2");
+    $('.noHover').attr("href", "https://opendata.ncats.nih.gov/covid19/");
+    document.getElementById("institute_link").style.display = "inline-block";
 
-			$('#pro_text').text("To identify small molecules targeting human proteins in the SARS-CoV-2 interactome, we sought ligands known to interact with the human proteins, often directly but also by pathway and complexes. Molecules were prioritised by the statistical significance of the interaction between the human and viral proteins");
-			//$('#pro_text').css('text-align','justify');
-			console.log("SARS-CoV-2");
-			$('.noHover').attr("href", "https://www.nature.com/articles/s41586-020-2286-9");
-		    document.getElementById("institute_link").style.display = "inline-block";
-			
-			});
-			
-			
-			
-			
-				$('#NCATS').click(function(e) {
-				
-				s_name='NCATS';
-				table1.ajax.reload();
-				table2.ajax.reload();
-				table3.ajax.reload();
-				table4.ajax.reload();
+});
 
 
-						    document.getElementById("general_text").style.display = "none";
-						    document.getElementById("Fraunhofer_IME").style.display = "inline-block";
-
-				console.log("text changed");
-			e.preventDefault();
-
-			$('#sname').text("NCATS");
-			
-			$('#pro_text').text("NCATs uses live SARS-CoV-2 virus and measures the ability of compounds to reverse viral-induced CPE in Vero E6 host cells. Viral infection and replication leads to a loss of host cell viability, which is indirectly measured by an endpoint assessment of host cell viability after 72 hours. Compounds with antiviral activity protect the host cells from viral-induced CPE, thereby increasing viability.");
-			//$('#pro_text').css('text-align','justify');
-			//console.log("SARS-CoV-2");
-			$('.noHover').attr("href", "https://opendata.ncats.nih.gov/covid19/");
-		    document.getElementById("institute_link").style.display = "inline-block";
-			
-			});
-		
-			
-			
-			
-			
-				$('#Sangeun_Jeon').click(function(e) {
-				
-				s_name='Sangeun Jeon et al.';
-				table1.ajax.reload();
-				table2.ajax.reload();
-				table3.ajax.reload();
-				table4.ajax.reload();
 
 
-						    document.getElementById("general_text").style.display = "none";
-						    document.getElementById("Fraunhofer_IME").style.display = "inline-block";
+$('#Sangeun_Jeon').click(function(e) {
 
-				console.log("text changed");
-			e.preventDefault();
-
-			$('#sname').text("Sangeun Jeon et al.");
-			
-			$('#pro_text').text("Identified 24 drugs which exhibited antiviral efficacy against SARS-CoV-2. In particular, two FDA-approved drugs-niclosamide and ciclesonide– were notable in some respects. These drugs will be tested in an appropriate animal model for their antiviral activities. In near future, these already FDA-approved drugs could be further developed following clinical trials in order to provide additional therapeutic options for patients with COVID-19.");
-			//$('#pro_text').css('text-align','justify');
-			//console.log("SARS-CoV-2");
-			$('.noHover').attr("href", "https://www.biorxiv.org/content/10.1101/2020.03.20.999730v3");
-		    document.getElementById("institute_link").style.display = "inline-block";
-			
-			});			
-			
-			
-				$('#Franck_Touret').click(function(e) {
-				
-				s_name='Franck Touret et al.';
-				table1.ajax.reload();
-				table2.ajax.reload();
-				table3.ajax.reload();
-				table4.ajax.reload();
+    s_name = 'Sangeun Jeon et al.';
+    table1.ajax.reload();
+    table2.ajax.reload();
+    table3.ajax.reload();
+    table4.ajax.reload();
 
 
-						    document.getElementById("general_text").style.display = "none";
-						    document.getElementById("Fraunhofer_IME").style.display = "inline-block";
+    document.getElementById("general_text").style.display = "none";
+    document.getElementById("Fraunhofer_IME").style.display = "inline-block";
 
-				console.log("text changed");
-			e.preventDefault();
+    console.log("text changed");
+    e.preventDefault();
 
-			$('#sname').text("Franck Touret et al.");
-			
-			$('#pro_text').text("The compound hits were sorted according to their chemical composition and their known therapeutic effect, then EC50 and CC50 were determined for a subset of compounds. Several drugs, such as Azithromycine, Opipramol, Quinidine or Omeprazol present antiviral potency with 2<EC50<20µM.     "+
-			" By providing new information on molecules inhibiting SARS-CoV-2 replication in vitro, this study could contribute to the short-term repurposing of drugs against Covid-19     "
-			);
-			//$('#pro_text').css('text-align','justify');
-			//console.log("SARS-CoV-2");
-			$('.noHover').attr("href", "https://www.nature.com/articles/s41598-020-70143-6");
-		    document.getElementById("institute_link").style.display = "inline-block";
-			
-			});			
-		
-				$('#Stuart_Weston').click(function(e) {
-				
-				s_name='Stuart Weston et al.';
-				table1.ajax.reload();
-				table2.ajax.reload();
-				table3.ajax.reload();
-				table4.ajax.reload();
+    $('#sname').text("Sangeun Jeon et al.");
+
+    $('#pro_text').text("Identified 24 drugs which exhibited antiviral efficacy against SARS-CoV-2. In particular, two FDA-approved drugs-niclosamide and ciclesonide– were notable in some respects. These drugs will be tested in an appropriate animal model for their antiviral activities. In near future, these already FDA-approved drugs could be further developed following clinical trials in order to provide additional therapeutic options for patients with COVID-19.");
+    //$('#pro_text').css('text-align','justify');
+    //console.log("SARS-CoV-2");
+    $('.noHover').attr("href", "https://www.biorxiv.org/content/10.1101/2020.03.20.999730v3");
+    document.getElementById("institute_link").style.display = "inline-block";
+
+});
 
 
-						    document.getElementById("general_text").style.display = "none";
-						    document.getElementById("Fraunhofer_IME").style.display = "inline-block";
+$('#Franck_Touret').click(function(e) {
 
-				console.log("text changed");
-			e.preventDefault();
+    s_name = 'Franck Touret et al.';
+    table1.ajax.reload();
+    table2.ajax.reload();
+    table3.ajax.reload();
+    table4.ajax.reload();
 
-			$('#sname').text("Stuart Weston et al.");
-			
-			$('#pro_text').text("20 FDA approved drugs are tested for antiviral activity against SARS-CoV-2 that previously found to inhibit SARS-CoV and MERS-CoV. Furthermore, 17 of these also inhibit SARS-CoV-2 at a range of IC50 values at non-cytotoxic concentrations. ");
-			//$('#pro_text').css('text-align','justify');
-			//console.log("SARS-CoV-2");
-			$('.noHover').attr("href", "https://www.biorxiv.org/content/10.1101/2020.03.25.008482v1");
-		    document.getElementById("institute_link").style.display = "inline-block";
-			
-			});		
 
-	});
+    document.getElementById("general_text").style.display = "none";
+    document.getElementById("Fraunhofer_IME").style.display = "inline-block";
+
+    console.log("text changed");
+    e.preventDefault();
+
+    $('#sname').text("Franck Touret et al.");
+
+    $('#pro_text').text("The compound hits were sorted according to their chemical composition and their known therapeutic effect, then EC50 and CC50 were determined for a subset of compounds. Several drugs, such as Azithromycine, Opipramol, Quinidine or Omeprazol present antiviral potency with 2<EC50<20µM.     " +
+        " By providing new information on molecules inhibiting SARS-CoV-2 replication in vitro, this study could contribute to the short-term repurposing of drugs against Covid-19     "
+    );
+    //$('#pro_text').css('text-align','justify');
+    //console.log("SARS-CoV-2");
+    $('.noHover').attr("href", "https://www.nature.com/articles/s41598-020-70143-6");
+    document.getElementById("institute_link").style.display = "inline-block";
+
+});
+
+$('#Stuart_Weston').click(function(e) {
+
+s_name = 'Stuart Weston et al.';
+table1.ajax.reload();
+table2.ajax.reload();
+table3.ajax.reload();
+table4.ajax.reload();
+
+
+document.getElementById("general_text").style.display = "none";
+document.getElementById("Fraunhofer_IME").style.display = "inline-block";
+
+console.log("text changed");
+e.preventDefault();
+
+$('#sname').text("Stuart Weston et al.");
+
+$('#pro_text').text("20 FDA approved drugs are tested for antiviral activity against SARS-CoV-2 that previously found to inhibit SARS-CoV and MERS-CoV. Furthermore, 17 of these also inhibit SARS-CoV-2 at a range of IC50 values at non-cytotoxic concentrations. ");
+//$('#pro_text').css('text-align','justify');
+//console.log("SARS-CoV-2");
+$('.noHover').attr("href", "https://www.biorxiv.org/content/10.1101/2020.03.25.008482v1");
+document.getElementById("institute_link").style.display = "inline-block";
+
+});
+
+});
 </script>
 </head>
 <body>
@@ -542,32 +352,14 @@ select * from fimm.micha_protocols where protocol_name='Covid19' and study_title
 	
 	
 <?php include 'theme_files/header.php' ;?>
+<?php include 'theme_files/search_compound.php' ;?>
 
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-    <div id="templatemo_search">
-    
-    	<div id="search_box">
-<!--	<script async src="https://cse.google.com/cse.js?cx=017046730853086508825:sckkkfpde90"></script>
-<div class="gcse-search"></div>-->
 
-            <form action="compound.php" method="get">
-                <input type="text" value="Enter compound name..." name="c_name" size="10" id="searchfield" title="searchfield" 
-				onfocus="clearText(this)" onblur="clearText(this)" />
-                <input type="submit" name="" value="" alt="Search" id="searchbutton" title="Search" />
-            </form>
-        </div>
-    
-    </div> <!-- end of search -->
-        <!----- end of search ----->
-        <!------------------------->
-        <!------------------------->
         <div id="templatemo_banner">
             <div id="banner_left" style="width:600px;">
                 <p id="pro_text" style="display: inline;font-size: 14.5px;">
-We are working on the FAIRification of Covid19 drug screening studies. Please find the annotated compounds, 
-cell lines and experimental protocols from individual studies in the right panel.
+					We are working on the FAIRification of Covid19 drug screening studies. Please find the annotated compounds, 
+					cell lines and experimental protocols from individual studies in the right panel.
                     <span></span>
                 </p>
                 <div style="display:none;" id="institute_link" class="button_01">
@@ -607,11 +399,9 @@ cell lines and experimental protocols from individual studies in the right panel
                 <!------------------------------------------------------------------------------------------------->
                 
 				<div class="box margin_r30 box_border" style=";width: 900px;border-right: 0px dotted #999;" id="general_text">
-In this box we show the annotated compounds, 
-cell lines and experimental protocols for the selected study
-
-
-</div>				
+					In this box we show the annotated compounds, 
+					cell lines and experimental protocols for the selected study
+				</div>				
 				<div class="box margin_r30 box_border" style="display:none;width: 900px;border-right: 0px dotted #999;" id="Fraunhofer_IME">
                     <h2 id="sname">Fraunhofer IME </h2>
                     <ul class="nav nav-tabs" role="tablist" style="margin-bottom:20px;">
@@ -679,17 +469,7 @@ cell lines and experimental protocols for the selected study
                                 </table>
                             </div>
                         </div>
-						
-						
-						
-						
-	
-	
-	
-	
-	
-	
-						
+												
                         <div role="tabpanel" class="tab-pane fade" id="Experiment">
                             <table id="results_2" class="display" style="clear:both;table-layout:fixed;width:100%;">
                                 <thead>
@@ -756,20 +536,6 @@ cell lines and experimental protocols for the selected study
                     </div>
                 </div>
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
                 <div class="cleaner"></div>
             </div>
         </div>
@@ -790,7 +556,6 @@ cell lines and experimental protocols for the selected study
         <!------------------------->
         <!------------------------->
 		<?php include 'theme_files/footer.php'; ?>
-
 
         <div class="cleaner_h40"></div>
     </div>
