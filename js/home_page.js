@@ -1,47 +1,32 @@
-function clearText(field)
-{
+function clearText(field) {
     if (field.defaultValue == field.value) field.value = '';
     else if (field.value == '') field.value = field.defaultValue;
 }
-
-
-
-
-        <!-- jQuery code to show the working of this method -->
-        $(document).ready(function() { 
-		
-				$("#step2").click(function(event) {
-		  alert("Please upload the file first");
-		
-		});
-		$("#step3").click(function(event) {
-		  alert("Please upload the file first");
-		
-		});
-
-
-
-            $("#upload_id").click(function(event) { 
-			  event.preventDefault();
-$('#upload_id').click(false);
-
-                //$(this).fadeOut();
-console.log("sdsdsdsss");
-    $('html,body').animate({
-        scrollTop: $(".style_upload").offset().top},
-        'slow');
-
-
-	document.getElementById("style1").style.display = "none";
-	document.getElementById("style2").style.display = "none";
-	document.getElementById("style3").style.display = "none";
-	document.getElementById("style_upload").style.display = "block";
-
-                 				
-            }); 
-			
+$(document).ready(function() {
+    $("#step2").click(function(event) {
+        alert("Please upload the file first");
+    });
+    $("#step3").click(function(event) {
+        alert("Please upload the file first");
+    });
 	
-			
+    $("#upload_id").click(function(event) {
+        event.preventDefault();
+        $('#upload_id').click(false);
+
+        //$(this).fadeOut();
+        console.log("sdsdsdsss");
+        $('html,body').animate({
+                scrollTop: $(".style_upload").offset().top
+            },
+            'slow');
+
+        document.getElementById("style1").style.display = "none";
+        document.getElementById("style2").style.display = "none";
+        document.getElementById("style3").style.display = "none";
+        document.getElementById("style_upload").style.display = "block";
+    });
+
     $('#submit').attr('disabled', 'disabled');
     var a = 0;
     //binds to onchange event of your input field
@@ -77,7 +62,6 @@ console.log("sdsdsdsss");
         }
     });
 
-
     $(".upload-image").click(function() {
         document.getElementById("uploadmessage").style.display = "block";
         document.getElementById("dropme").style.display = "none";
@@ -85,6 +69,4 @@ console.log("sdsdsdsss");
         document.getElementById("loadbar").style.display = "block";
         $(".form-horizontal").submit();
     });
-	
-			
-        }); 
+});

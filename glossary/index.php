@@ -148,26 +148,9 @@
 	
 	
 <?php include '../theme_files/header.php' ;?>
+<?php include '../theme_files/search_compound.php' ;?>
 
-        <!-- end of templatemo_menu -->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-    <div id="templatemo_search">
-    
-    	<div id="search_box">
-<!--	<script async src="https://cse.google.com/cse.js?cx=017046730853086508825:sckkkfpde90"></script>
-<div class="gcse-search"></div>-->
 
-            <form action="../compound.php" method="get">
-                <input type="text" value="Enter compound name..." name="c_name" size="10" id="searchfield" title="searchfield" 
-				onfocus="clearText(this)" onblur="clearText(this)" />
-                <input type="submit" name="" value="" alt="Search" id="searchbutton" title="Search" />
-            </form>
-        </div>
-    
-    </div> <!-- end of search -->
-        <!-- end of search -->
         <!------------------------->
         <!------------------------->
         <div id="templatemo_banner">
@@ -197,10 +180,6 @@
         <!------------------------->
         <!------------------------->
         <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-
         <div id="templatemo_content_top"></div>
         <div id="templatemo_content">
             <div class="section_w940">
@@ -252,29 +231,7 @@
         </div>
         <div id="templatemo_content_bottom"></div>
         <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-        <!------------------------->
-
         <div id="templatemo_footer" style="padding: 20px 0px;">
-            <!--<div class="section_w240" style="width: 400px;">
-                <h3 style="margin-left:70px;">MICHA Components</h3>
-                <div class="sub_content">
-                    <p>
-                        <img src="2.PNG" width="390px" height="60%" style="float:center;">
-                    </p>
-                </div>
-            </div>
-            <div class="section_w240" style="    width: 390px;">
-                <h3 style="margin-left:70px;">Implementation</h3>
-                <div class="sub_content">
-                    <img src="3.PNG" width="500px" height="250px" style="float:center;">
-                </div>
-            </div>-->
             <div class="section_w240" style="width: 900px;" id="compound_point">
                 <div class="box margin_r30 box_border" style="width: 106px;">
                     <h2>Compounds </h2>
