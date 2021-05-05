@@ -21,14 +21,13 @@ $result_expr=$record_expr->list_all($_POST['fname'],$_POST['sname']);
 $result_an=$record_an->list_all($_POST['fname'],$_POST['sname']);
 
 
-
-	$output = array(
+$output = array(
 			"cell_data"	=>	$result_cell,			
 			"an_data"	=> 	$result_an,
 			"expr_data"	=>  $result_expr
-		);
+);
 
-		echo json_encode($output);
+echo json_encode($output);
 
 
 

@@ -443,10 +443,10 @@ $(document).ready(function() {
                                 <thead>
                                     <tr>
                                         <th>
-                                            Min concentration
+                                            Min concentration (nM)
                                         </th>
                                         <th>
-                                            Max concentration
+                                            Max concentration (nM)
                                         </th>
                                         <th>
                                             Analysis ref

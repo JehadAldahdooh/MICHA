@@ -14,6 +14,10 @@ $requestData = $_REQUEST;
 
 if ($type == "cell")
 {
+    $columns = array(
+    // datatable column index  => database column name
+    0 => 'cell_line', 1 => 'cell_line_provenance', 2 => 'patient_age', 3 => 'patient_sex', 4 => 'patient_diagnosis',
+	5 => 'patient_sample', 6 => 'patient_sample_date', 7 => 'patient_evaluation_date',);
 
     if ($requestData['search']['value'])
     {
@@ -29,7 +33,7 @@ if ($type == "cell")
 				or patient_sample LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
 				or patient_sample_date LIKE '%" . strtoupper($requestData['search']['value']) . "%'
 				or patient_evaluation_date LIKE '%" . strtoupper($requestData['search']['value']) . "%')  
-			    OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
+			     " ;
 
         $query3 = "select distinct 
 				cell_line , cell_line_provenance ,  patient_age , patient_sex , patient_diagnosis ,
@@ -51,7 +55,7 @@ if ($type == "cell")
 				cell_line , cell_line_provenance ,  patient_age , patient_sex , patient_diagnosis ,
 				patient_sample , patient_sample_date,patient_evaluation_date from micha_protocols p  where protocol_name='Covid19' 
 				and study_title='$p_name'
-				OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
+				 " ;
 
         $query3 = "select distinct 
 				cell_line , cell_line_provenance ,  patient_age , patient_sex , patient_diagnosis ,
@@ -60,21 +64,30 @@ if ($type == "cell")
 				";
 
     }
+	$query2.= " ORDER BY " . $columns[$requestData['order'][0]['column']] . "   " . $requestData['order'][0]['dir'] . "   ";
+    $query2.= " OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
 
 }
 else if ($type == "analysis")
 {
+	
+	    $columns = array(
+			// datatable column index  => database column name
+			0 => 'min_concentration', 1 => 'max_concentration', 2 => 'analysis_ref', 3 => 'analysis_metric',);
+
+
     if ($requestData['search']['value'])
     {
 
         $query2 = "select distinct 
-			min_concentration , max_concentration ,
+			round(CAST( min_concentration as numeric)   ,4) as min_concentration,   
+			   round(CAST( max_concentration as numeric) ,4) as max_concentration,
 			analysis_ref, analysis_metric from micha_protocols p  where protocol_name='Covid19' and study_title='$p_name'
 									 and (min_concentration LIKE '%" . strtoupper($requestData['search']['value']) . "%' 
 			  or max_concentration LIKE '%" . strtoupper($requestData['search']['value']) . "%'
 			  or analysis_ref LIKE '%" . strtoupper($requestData['search']['value']) . "%'
 			  or analysis_metric LIKE '%" . strtoupper($requestData['search']['value']) . "%' )			  
-			   OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
+			    ";
 
         $query3 = "select distinct 
 			min_concentration , max_concentration ,
@@ -90,9 +103,10 @@ else if ($type == "analysis")
     {
 
         $query2 = "select distinct 
-			min_concentration , max_concentration ,
+			round(CAST( min_concentration as numeric)   ,4) as min_concentration,   
+			   round(CAST( max_concentration as numeric) ,4) as max_concentration,
 			analysis_ref, analysis_metric from micha_protocols p  where protocol_name='Covid19' and study_title='$p_name'
-			   OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
+			    " ;
 
         $query3 = "select distinct 
 			min_concentration , max_concentration ,
@@ -100,10 +114,17 @@ else if ($type == "analysis")
 			    ";
 
     }
+	$query2.= " ORDER BY " . $columns[$requestData['order'][0]['column']] . "   " . $requestData['order'][0]['dir'] . "   ";
+    $query2.= " OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
 
 }
 else if ($type == "expr")
 {
+	    $columns = array(0 => 'dilution_fold', 1 => 'vehicle', 2 => 'experimental_medium', 3 => 'plate_type', 
+	4 => 'assay_format', 5 => 'assay_test_type', 6 => 'detection_tech', 7 => 'cell_density', 
+	8 => 'method_dispensation', 9 => 'volume_per_well', 10 => 'treatment_time');
+
+
     if ($requestData['search']['value'])
     {
 
@@ -122,7 +143,7 @@ else if ($type == "expr")
 			  or method_dispensation LIKE '%" . ($requestData['search']['value']) . "%'
 			  or treatment_time LIKE '%" . strtoupper($requestData['search']['value']) . "%'
 			  or volume_per_well LIKE '%" . strtoupper($requestData['search']['value']) . "%')  
-			   OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
+			    " ;
 
         $query3 = "select distinct 
 			dilution_fold , vehicle , experimental_medium , plate_type , 
@@ -147,7 +168,7 @@ else if ($type == "expr")
 			dilution_fold , vehicle , experimental_medium , plate_type , 
 			assay_format , assay_test_type , detection_tech  , cell_density , method_dispensation , 
 			volume_per_well , treatment_time from micha_protocols p  where protocol_name='Covid19' and study_title='$p_name'
-			   OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
+			    ";
 
         $query3 = "select distinct 
 			dilution_fold , vehicle , experimental_medium , plate_type , 
@@ -157,9 +178,16 @@ else if ($type == "expr")
 
     }
 
+
+	$query2.= " ORDER BY " . $columns[$requestData['order'][0]['column']] . "   " . $requestData['order'][0]['dir'] . "   ";
+    $query2.= " OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
+
 }
 else
 {
+	    $columns = array(0 => 'compound_name', 1 => 'standard_inchi_key');
+
+
     if ($requestData['search']['value'])
     {
 
@@ -170,7 +198,7 @@ else
 			compound_name , standard_inchi_key from micha_protocols p  where protocol_name='Covid19' and study_title='$p_name'
 				and (compound_name LIKE '%" . $requestData['search']['value'] . "%' 
 			  or standard_inchi_key LIKE '%" . strtoupper($requestData['search']['value']) . "%') 
-			   OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
+			    ";
 
 //print_r( $query2);
 
@@ -185,13 +213,18 @@ else
     {
         $query2 = "select distinct 
 			compound_name , standard_inchi_key from micha_protocols p  where protocol_name='Covid19' and study_title='$p_name'
-			   OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
+			    " ;
 
         $query3 = "select distinct 
 			compound_name , standard_inchi_key from micha_protocols p  where protocol_name='Covid19' and study_title='$p_name'
 			    ";
 
     }
+	
+	$query2.= " 	ORDER BY " . $columns[$requestData['order'][0]['column']] . "   " . $requestData['order'][0]['dir'] . "   ";
+    $query2.= "     OFFSET " . $requestData['start'] . " limit " . $requestData['length'] . "   ";
+
+
 
 }
 

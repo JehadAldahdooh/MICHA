@@ -196,6 +196,55 @@ font-style: italic;
 	<ul>
 	<li><a href="#getPetById"><code><span class="http-method">get</span> /get_targets/{inchiKey}</code></a></li>
 	</ul>-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	    <h1><a name="Targets">Annotations</a></h1>
+    <div class="app-desc">
+        <p>
+            This API endpoint will return annotations for fairified drug screening protocols in MICHA. Input will be standard inchikey and API will return tested cell-lines and experimental settings for input compound (if any)
+			
+			e.g. <a href="https://micha-protocol.org/micha_api/annotations/XGALLCVXEZPNRQ-UHFFFAOYSA-N">https://micha-protocol.org/micha_api/annotations/XGALLCVXEZPNRQ-UHFFFAOYSA-N</a>
+        </p>
+    </div>
+
+    <div class="method"><a name="getPetById" />
+        <div class="method-path">
+            <!--<a class="up" href="#__Methods">Up</a>-->
+            <pre class="get"><code class="huge"><span class="http-method">get</span> /annotations/{inchiKey}</code></pre></div>
+        <div class="method-summary">Find drug screening annotations by inchikey </div>
+        <div class="method-notes"></div>
+
+        <h3 class="field-label">Path parameters</h3>
+        <div class="field-items">
+            <div class="param">inchiKey (required)</div>
+
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; targets to be returned </div>
+        </div>
+        <!-- field-items -->
+
+        <!--Todo: process Response Object and its headers, schema, examples -->
+
+        <h3 class="field-label">Produces</h3> This API call produces the following media types according to the <span class="header">Accept</span> request header; the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+        <ul>
+            <li><code>application/json</code></li>
+        </ul>
+        <a href="#"></a>
+    </div>
+    <!-- method -->
+    <hr/>
+	
+	
     <h1><a name="Targets">Drug targets</a></h1>
 
     <div class="app-desc">
@@ -235,40 +284,7 @@ font-style: italic;
     <!-- method -->
     <hr/>
 
-    <h1><a name="Targets">Annotations</a></h1>
-    <div class="app-desc">
-        <p>
-            This API endpoint will return annotations for fairified drug screening protocols in MICHA. Input will be standard inchikey and API will return tested cell-lines and experimental settings for input compound (if any)
-			
-			e.g. <a href="https://micha-protocol.org/micha_api/annotations/XGALLCVXEZPNRQ-UHFFFAOYSA-N">https://micha-protocol.org/micha_api/annotations/XGALLCVXEZPNRQ-UHFFFAOYSA-N</a>
-        </p>
-    </div>
 
-    <div class="method"><a name="getPetById" />
-        <div class="method-path">
-            <!--<a class="up" href="#__Methods">Up</a>-->
-            <pre class="get"><code class="huge"><span class="http-method">get</span> /annotations/{inchiKey}</code></pre></div>
-        <div class="method-summary">Find drug screening annotations by inchikey </div>
-        <div class="method-notes"></div>
-
-        <h3 class="field-label">Path parameters</h3>
-        <div class="field-items">
-            <div class="param">inchiKey (required)</div>
-
-            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; targets to be returned </div>
-        </div>
-        <!-- field-items -->
-
-        <!--Todo: process Response Object and its headers, schema, examples -->
-
-        <h3 class="field-label">Produces</h3> This API call produces the following media types according to the <span class="header">Accept</span> request header; the media type will be conveyed by the <span class="header">Content-Type</span> response header.
-        <ul>
-            <li><code>application/json</code></li>
-        </ul>
-        <a href="#"></a>
-    </div>
-    <!-- method -->
-    <hr/>
 
     <h3>Table of Contents</h3>
     <ol>

@@ -216,8 +216,28 @@ include 'config/psql_connection.php';
 			//get all inchikey in the file without any for loop
 			$inchikeysall = array_slice(array_column($xlsx->rows(), '1'),1);
 
-            //echo strtolower($xlsx->rows()[0][0]);
-            //echo strtolower($xlsx->rows()[0][1]);
+
+              
+            $compound_name_check= strtolower($xlsx->rows()[0][0]);
+            $inchi_check=strtolower($xlsx->rows()[0][1]);
+			 
+		
+            //note strpos returns false if string not exist in the first string
+			// use === for comparing it to false
+			//don't compare it to 'false' as it is not string. it is boolean 
+			
+			
+			if($compound_name_check == '' || $inchi_check =='' || strpos($compound_name_check, 'compound') === false ||  strpos($inchi_check, 'inchi') === false ){
+				$message = "Please upload the correct file.";
+				echo "<script type='text/javascript'>alert('$message');</script>";
+				echo "<script type='text/javascript'> document.location = 'https://micha-protocol.org/index'; </script>";
+				
+				header("Location: https://micha-protocol.org/index");
+                exit();
+
+				
+			}
+            
 
 			if(count($inchikeysall) <= 5000){
 
@@ -225,6 +245,11 @@ include 'config/psql_connection.php';
 			}else{
 				$message = "It is not allowed to submit more than 5k inchi keys.";
 				echo "<script type='text/javascript'>alert('$message');</script>";
+				echo "<script type='text/javascript'> document.location = 'https://micha-protocol.org/index'; </script>";
+
+				header("Location: https://micha-protocol.org/index");
+                exit();
+
 			}
 
 		    $compund_names=[];
