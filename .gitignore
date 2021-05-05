@@ -16,6 +16,7 @@ uploaded_data/
 compounds_mod.php
 index_mod.html
 compounds_original.php
+sendmail.php
 
 api/vendor/
 api/node_modules/

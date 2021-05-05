@@ -29,7 +29,8 @@
                                     <label class="input" style="color:lightgrey;">Cell line name
                                         <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
 										
-                                        <input autocomplete="off" type="text" name="Cell_line_name" id="Cell_line_name" type="text" placeholder="Cell line name">
+                                        <input autocomplete="off" type="text" name="Cell_line_name" id="Cell_line_name" type="text" 
+										placeholder="e.g., DU4475, MOLM-13">
                                         <div id="suggesstion-box_Cell_line_name"></div>
 
                                     </label>
@@ -39,7 +40,7 @@
                                         <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
 										
                                         <input autocomplete="off" name="Cell_line_provenance" id="Cell_line_provenance" type="text" 
-										placeholder="Cell line provenance">
+										placeholder="e.g., Cellosaurus, DSMZ">
                                         <div id="suggesstion-box_Cell_line_provenance"></div>
                                     </label>
                                 </section>
@@ -85,7 +86,7 @@
                                 <section class="col col-6">
                                     <label class="input" style="color:lightgrey;"> Age
                                         <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input name="Age" id="Age" type="text" placeholder="Age">
+                                        <input name="Age" id="Age" type="text" placeholder="e.g., 23">
                                     </label>
                                 </section>
                             </div>
@@ -95,7 +96,7 @@
                                 <section class="col col-6">
                                     <label class="input" style="color:lightgrey;">Sex
                                         <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input name="Sex" id="Sex" type="text" placeholder="Sex">
+                                        <input name="Sex" id="Sex" type="text" placeholder="e.g., Male">
                                     </label>
                                 </section>
                                 <section class="col col-6">
@@ -115,7 +116,7 @@
                                 <section class="col col-6">
                                     <label class="input" style="color:lightgrey;"> Date of evaluation
                                         <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input name="Date_of_evaluation" id="Date_of_evaluation" type="text" placeholder="Date of evaluation">
+                                        <input name="Date_of_evaluation" id="Date_of_evaluation" type="text" placeholder="e.g., 2020-18-12">
                                     </label>
                                 </section>
                             </div>
@@ -125,7 +126,7 @@
                                 <section class="col col-6">
                                     <label class="input" style="color:lightgrey;">Date of sampling
                                         <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                                        <input name="Date_of_sampling" id="Date_of_sampling" type="text" placeholder="Date of sampling">
+                                        <input name="Date_of_sampling" id="Date_of_sampling" type="text" placeholder="e.g., 2020-18-12">
                                     </label>
                                 </section>
                              

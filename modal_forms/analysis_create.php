@@ -44,14 +44,16 @@
                                 <section class="col col-6">
                                     <label class="input" style="color:lightgrey;"> Analysis reference
                                         <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input autocomplete="off" id="Analysis_reference" name="Analysis_reference"  type="text" placeholder="web link or DOI ">
+                                        <input autocomplete="off" id="Analysis_reference" name="Analysis_reference"
+										type="text" placeholder="e.g., breeze.fimm.fi ">
 										<div id="suggesstion-box_Analysis_reference"></div>
                                     </label>
                                 </section>
                                 <section class="col col-6">
                                     <label class="input" style="color:lightgrey;"> Analysis metric
                                         <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                                        <input  autocomplete="off" id="Analysis_result" name="Analysis_result" type="text" placeholder="IC50, AC50, ..etc">
+                                        <input  autocomplete="off" id="Analysis_result" name="Analysis_result" 
+										type="text" placeholder="e.g., IC50, AC50">
                                     	<div id="suggesstion-box_Analysis_result"></div>
 									</label>
                                 </section>
@@ -79,7 +81,7 @@
                                     <label class="input" style="color:lightgrey;">Min concentration
                                         <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
                                         <input autocomplete="off" id="min_concentration" name="min_concentration" type="text" 
-										placeholder="units in nM">
+										placeholder="units in nM e.g., 0.1">
 										<div id="suggesstion-box_min_concentration"></div>
                                     </label>
                                 </section>
@@ -87,7 +89,7 @@
                                     <label class="input" style="color:lightgrey;"> Max concentration
                                         <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
                                         <input autocomplete="off" id="max_concentration" name="max_concentration" type="text" 
-										placeholder="units in nM">
+										placeholder="units in nM e.g., 100">
 									<div id="suggesstion-box_max_concentration"></div>
 
                                     </label>

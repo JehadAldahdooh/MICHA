@@ -95,7 +95,7 @@
                         <label class="input" style="color:lightgrey;">
                            Medium
                            <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                           <input autocomplete="off" id="Medium" name="Medium" type="text" placeholder="Medium">
+                           <input autocomplete="off" id="Medium" name="Medium" type="text" placeholder="e.g., DMEM, RPMI1640">
                            <div id="suggesstion-box_Medium"></div>
                         </label>
                      </section>
@@ -103,7 +103,7 @@
                         <label class="input" style="color:lightgrey;">
                            Plate type
                            <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                           <input autocomplete="off" id="Plate_type" name="Plate_type" type="text" placeholder="Plate type">
+                           <input autocomplete="off" id="Plate_type" name="Plate_type" type="text" placeholder="e.g., Corning 384-well">
                            <div id="suggesstion-box_Plate_type"></div>
                         </label>
                      </section>
@@ -119,14 +119,14 @@
                         <label class="input" style="color:lightgrey;">
                            Cell density at plating
                            <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                           <input autocomplete="off" id="Cell_density_at_plating" name="Cell_density_at_plating"  type="text" placeholder="Cell density at plating">
+                           <input autocomplete="off" id="Cell_density_at_plating" name="Cell_density_at_plating"  type="text" placeholder="e.g., 3000">
                            <div id="suggesstion-box_Cell_density"></div>
                         </label>
                      </section>
                      <section class="col col-6">
                         <label class="input" style="color:lightgrey;">Time of treatment
                         <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                        <input id="Time_of_treatment" name="Time_of_treatment" type="text" placeholder="Time of treatment">
+                        <input id="Time_of_treatment" name="Time_of_treatment" type="text" placeholder="e.g., 72">
                         </label>
                      </section>
                   </div>
@@ -137,7 +137,7 @@
                         <label class="input" style="color:lightgrey;">
                            Dilution fold
                            <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                           <input autocomplete="off" id="dilution_fold" name="dilution_fold"  type="text" placeholder="Dilution fold">
+                           <input autocomplete="off" id="dilution_fold" name="dilution_fold"  type="text" placeholder="e.g., 10">
                            <div id="suggesstion-box_dilution_fold"></div>
                         </label>
                      </section>
@@ -145,7 +145,7 @@
                         <label class="input" style="color:lightgrey;">
                            Vehicle
                            <i class="icon-prepend icon-user" style="margin-top: 20px;"></i>
-                           <input autocomplete="off" id="vehicle" name="vehicle" type="text" placeholder="vehicle">
+                           <input autocomplete="off" id="vehicle" name="vehicle" type="text" placeholder="e.g., AQ, DMSO">
                            <div id="suggesstion-box_vehicle"></div>
                         </label>
                      </section>
@@ -155,7 +155,7 @@
                         <label class="input" style="color:lightgrey;">
                            Method dispensation
                            <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                           <input  autocomplete="off" id="method_dispensation" name="method_dispensation" type="text" placeholder="Method dispensation">
+                           <input  autocomplete="off" id="method_dispensation" name="method_dispensation" type="text" placeholder="e.g., Biotek Multiflo FX with RAD cassette (1 channel)">
                            <div id="suggesstion-box_method_dispensation"></div>
                         </label>
                      </section>
@@ -163,7 +163,7 @@
                         <label class="input" style="color:lightgrey;">
                            Volume per well
                            <i class="icon-prepend icon-th-large" style="margin-top: 20px;"></i>
-                           <input autocomplete="off" id="volume_per_well" name="volume_per_well" type="text" placeholder="Volume per well">
+                           <input autocomplete="off" id="volume_per_well" name="volume_per_well" type="text" placeholder="e.g., 25">
                            <div id="suggesstion-box_volume_per_well"></div>
                         </label>
                      </section>
